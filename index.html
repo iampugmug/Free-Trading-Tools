@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Free Trading Indicator Docs – Home</title>
+  <title>Open Indicator Lab – Free Trading Indicator Docs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">Free Trading Tools</div>
+    <div class="logo">Open Indicator Lab</div>
     <nav class="nav">
       <a href="#hero">Home</a>
       <a href="#indicators">Indicators</a>
@@ -19,10 +19,11 @@
 
   <section id="hero" class="hero">
     <div class="hero-inner">
-      <h1>Open, Transparent Trading Indicator Documentation</h1>
+      <h1>Open, Transparent Trading Indicators</h1>
       <p>
-        No paywalls. No upsells. Just clear documentation and practical guidance
-        on how to use trading indicators – starting with open-source tools for TradingView.
+        A quiet corner of the internet for traders who prefer clear logic over paywalls. 
+        Every indicator here comes with plain-English documentation, transparent inputs, 
+        and links to the original open-source scripts on TradingView.
       </p>
       <a href="#indicators" class="btn-primary">Browse indicators</a>
     </div>
@@ -33,181 +34,75 @@
     <section id="indicators" class="section">
       <h2>Indicators</h2>
       <p class="section-intro">
-        Each indicator below is documented with philosophy, configuration, and practical usage notes.
+        Start with the tools below, then drill into each indicator’s dedicated page for setup, interpretation, and best practices.
       </p>
       <div class="cards">
         <!-- Indicator 1 -->
         <article class="card">
           <h3>Adaptive Dual MA Trend Ribbon</h3>
-          <p class="tagline">Larsson-style trend ribbon using SMMA/EMA with ATR-based neutral zones.</p>
+          <p class="tagline">
+            Dual-moving-average trend ribbon with SMMA/EMA options and ATR-based neutral zones 
+            – inspired by community “Larsson-style” ribbons, but fully open-source.
+          </p>
           <ul class="pill-list">
             <li>Trend</li>
             <li>Overlay</li>
             <li>SMMA / EMA</li>
             <li>ATR filter</li>
           </ul>
-          <a href="#indicator-dual-ma-ribbon" class="btn-secondary">View docs</a>
+          <a href="indicators/adaptive-dual-ma-trend-ribbon.html" class="btn-secondary">View docs</a>
         </article>
 
-        <!-- Indicator 2 (placeholder — edit name/text/URL later) -->
+        <!-- Indicator 2 -->
         <article class="card">
-          <h3>Second Indicator Name</h3>
-          <p class="tagline">Short one-line description of what this indicator does.</p>
+          <h3>Blended Net Liquidity Correlation</h3>
+          <p class="tagline">
+            Customizable net-liquidity model built from FRED data, with multi-window correlation 
+            between liquidity and price.
+          </p>
           <ul class="pill-list">
-            <li>Category</li>
-            <li>Timeframe</li>
-            <li>Key concept</li>
+            <li>Macro</li>
+            <li>Liquidity</li>
+            <li>FRED data</li>
+            <li>Correlation table</li>
           </ul>
-          <a href="#indicator-second" class="btn-secondary">View docs</a>
+          <a href="indicators/blended-net-liquidity-correlation.html" class="btn-secondary">View docs</a>
         </article>
       </div>
-    </section>
-
-    <!-- INDICATOR DOCS: DUAL MA TREND RIBBON -->
-    <section id="indicator-dual-ma-ribbon" class="section section-doc">
-      <h2>Indicator Docs: Adaptive Dual MA Trend Ribbon</h2>
-
-      <div class="doc-actions">
-        <!-- TODO: replace REPLACE_WITH_TV_URL_1 with your real TradingView script URL -->
-        <a href="https://www.tradingview.com/script/REPLACE_WITH_TV_URL_1/" target="_blank" rel="noopener" class="btn-secondary">
-          Open on TradingView
-        </a>
-      </div>
-
-      <h3>Overview</h3>
-      <p>
-        The Adaptive Dual MA Trend Ribbon is a two-line moving-average ribbon designed to highlight
-        bullish / bearish trend phases and neutral zones using configurable SMMA / EMA / SMA / WMA
-        pairs plus an optional ATR-based filter. It is inspired by community “Larsson-style” trend
-        ribbons but remains fully open-source and transparent.
-      </p>
-
-      <h3>Default Settings (recommended starting point)</h3>
-      <div class="settings-grid">
-        <div>
-          <h4>SMMA “Larsson-style” preset</h4>
-          <ul>
-            <li>Source: <strong>HL2</strong></li>
-            <li>MA Type: <strong>SMMA (RMA)</strong></li>
-            <li>Fast Length: <strong>15</strong></li>
-            <li>Slow Length: <strong>29</strong></li>
-            <li>Use ATR Neutral Filter: <strong>ON</strong></li>
-            <li>ATR Length: <strong>60</strong></li>
-            <li>ATR Multiplier: <strong>0.3 – 0.5</strong></li>
-          </ul>
-        </div>
-        <div>
-          <h4>EMA “React quicker” preset</h4>
-          <ul>
-            <li>Source: <strong>HL2 or Close</strong></li>
-            <li>MA Type: <strong>EMA</strong></li>
-            <li>Fast Length: <strong>30</strong></li>
-            <li>Slow Length: <strong>60</strong></li>
-            <li>Use ATR Neutral Filter: <strong>ON</strong></li>
-            <li>ATR Length: <strong>60</strong></li>
-            <li>ATR Multiplier: <strong>0.3</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <h3>How to use it</h3>
-      <ol>
-        <li>Apply the indicator and start with one of the presets above.</li>
-        <li>Treat <strong>orange</strong> as bullish context, <strong>blue</strong> as bearish, and <strong>gray</strong> as neutral/chop.</li>
-        <li>Use the ribbon as a <strong>context filter</strong>, not as a stand-alone buy/sell system.</li>
-        <li>On higher timeframes (4H, 1D, 1W), consider slower MAs (e.g. EMA 50/100).</li>
-        <li>On intraday setups, test shorter EMAs (e.g. 10/21) and a smaller ATR multiplier.</li>
-      </ol>
-
-      <h3>Things to keep in mind</h3>
-      <ul>
-        <li>All moving averages lag; the ribbon won’t catch exact tops or bottoms.</li>
-        <li>ATR-neutral zones help avoid chop but cannot remove all noise.</li>
-        <li>Always combine with risk management, position sizing, and stop placement.</li>
-      </ul>
-    </section>
-
-    <!-- INDICATOR DOCS: SECOND INDICATOR (TEMPLATE) -->
-    <section id="indicator-second" class="section section-doc">
-      <h2>Indicator Docs: Second Indicator Name</h2>
-
-      <div class="doc-actions">
-        <!-- TODO: replace REPLACE_WITH_TV_URL_2 with your second TradingView script URL -->
-        <a href="https://www.tradingview.com/script/REPLACE_WITH_TV_URL_2/" target="_blank" rel="noopener" class="btn-secondary">
-          Open on TradingView
-        </a>
-      </div>
-
-      <h3>Overview</h3>
-      <p>
-        Describe what this indicator does in plain English: what it measures, what problems it tries to
-        solve for traders, and how it should be used in a broader system (not as a standalone signal).
-      </p>
-
-      <h3>Default Settings (recommended starting point)</h3>
-      <div class="settings-grid">
-        <div>
-          <h4>Core preset</h4>
-          <ul>
-            <li>Input 1: <strong>value</strong></li>
-            <li>Input 2: <strong>value</strong></li>
-            <li>Timeframe: <strong>e.g. 4H / 1D</strong></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Alternative preset</h4>
-          <ul>
-            <li>Input 1: <strong>value</strong></li>
-            <li>Input 2: <strong>value</strong></li>
-            <li>Usage: <strong>scalping / swing / confirmation</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <h3>How to use it</h3>
-      <ol>
-        <li>Explain how to read the core signal (e.g., crosses, colors, levels).</li>
-        <li>Explain what is good context vs. bad context for the tool.</li>
-        <li>Explain how you combine it with trend, structure, or volume.</li>
-      </ol>
-
-      <h3>Things to keep in mind</h3>
-      <ul>
-        <li>List limitations and common mistakes traders make with this indicator.</li>
-        <li>Warn about using it alone without context or risk management.</li>
-      </ul>
     </section>
 
     <!-- GUIDES -->
     <section id="guides" class="section">
       <h2>Guides & Concepts</h2>
       <p class="section-intro">
-        This section will grow over time with practical guides.
+        This section will grow over time with practical guides: how to think about trend, liquidity, 
+        and indicator design without turning everything into a sales pitch.
       </p>
       <ul class="guide-list">
-        <li>• How dual moving-average ribbons differ from single MAs</li>
-        <li>• Combining ribbons with higher-timeframe bias</li>
-        <li>• Why ATR neutral zones reduce noise</li>
+        <li>• Dual moving-average ribbons vs. single MAs</li>
+        <li>• Using higher-timeframe trend as a filter</li>
+        <li>• Why ATR-based neutral zones reduce chop</li>
+        <li>• How liquidity models can complement price action</li>
       </ul>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section">
-      <h2>About This Project</h2>
+      <h2>About Open Indicator Lab</h2>
       <p>
-        Most trading indicator content is locked behind paywalls and sales funnels.
-        This site exists to document useful tools for traders in a clear, structured,
-        and honest way – with open settings and open discussion of strengths and limitations.
+        Most trading indicator pages are built to sell you something. Open Indicator Lab is the opposite:
+        it documents useful tools for traders in a clean, neutral, “Investopedia-style” format. 
+        The focus is on understanding what an indicator does, when it tends to help, and where it can mislead you.
       </p>
       <p>
-        Tools here are provided for research and education only. Nothing on this site
-        is financial advice or a guarantee of results.
+        All tools here are open-source or transparently documented. Nothing on this site is financial advice, 
+        a signal service, or a promise of performance.
       </p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Free Trading Tools – Open Indicator Documentation</p>
+    <p>© <span id="year"></span> Open Indicator Lab – Free Trading Indicator Documentation</p>
   </footer>
 
   <script>
