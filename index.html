@@ -2,83 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My First Website</title>
+  <title>Free Trading Indicator Docs – Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">MySite</div>
+    <div class="logo">Free Trading Tools</div>
     <nav class="nav">
       <a href="#hero">Home</a>
+      <a href="#indicators">Indicators</a>
+      <a href="#guides">Guides</a>
       <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1>Welcome to My First Website</h1>
-      <p>This is a simple site I built from scratch using HTML & CSS.</p>
-      <a href="#contact" class="btn-primary">Get in touch</a>
+    <div class="hero-inner">
+      <h1>Open, Transparent Trading Indicator Documentation</h1>
+      <p>
+        No paywalls. No upsells. Just clear documentation and practical guidance
+        on how to use trading indicators – starting with open-source tools for TradingView.
+      </p>
+      <a href="#indicators" class="btn-primary">Browse indicators</a>
     </div>
   </section>
 
-  <section id="about" class="section">
-    <h2>About</h2>
-    <p>
-      Write a short paragraph here about who you are or what this site is for.
-      You can change this text to anything you like.
-    </p>
-  </section>
+  <main>
+    <section id="indicators" class="section">
+      <h2>Indicators</h2>
+      <p class="section-intro">
+        Each indicator below is documented with philosophy, configuration, and practical usage notes.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <h3>Adaptive Dual MA Trend Ribbon</h3>
+          <p class="tagline">Larsson-style trend ribbon using SMMA/EMA + ATR neutral zones.</p>
+          <ul class="pill-list">
+            <li>Trend</li>
+            <li>Overlay</li>
+            <li>SMMA / EMA</li>
+            <li>ATR filter</li>
+          </ul>
+          <a href="#indicator-dual-ma-ribbon" class="btn-secondary">View docs</a>
+        </article>
+      </div>
+    </section>
 
-  <section id="services" class="section section-alt">
-    <h2>What I Do</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Service One</h3>
-        <p>Brief description of the first thing you offer or care about.</p>
-      </div>
-      <div class="card">
-        <h3>Service Two</h3>
-        <p>Brief description of another area, skill, or product.</p>
-      </div>
-      <div class="card">
-        <h3>Service Three</h3>
-        <p>Anything you want to showcase can go here.</p>
-      </div>
-    </div>
-  </section>
+    <section id="indicator-dual-ma-ribbon" class="section section-doc">
+      <h2>Indicator Docs: Adaptive Dual MA Trend Ribbon</h2>
 
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <form class="contact-form">
-      <label>
-        Name
-        <input type="text" name="name" placeholder="Your name" required />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" placeholder="you@example.com" required />
-      </label>
-      <label>
-        Message
-        <textarea name="message" rows="4" placeholder="Say hello..."></textarea>
-      </label>
-      <button type="submit" class="btn-primary" disabled>
-        Send (demo only)
-      </button>
-      <p class="tiny-note">This form is just visual for now.</p>
-    </form>
-  </section>
+      <h3>Overview</h3>
+      <p>
+        The Adaptive Dual MA Trend Ribbon is a two-line moving-average ribbon designed to highlight
+        bullish / bearish trend phases and neutral zones using configurable SMMA / EMA / SMA / WMA
+        pairs plus an optional ATR-based filter. It is inspired by community “Larsson-style” trend
+        ribbons but remains fully open-source and transparent.
+      </p>
+
+      <h3>Default Settings (recommended starting point)</h3>
+      <div class="settings-grid">
+        <div>
+          <h4>SMMA “Larsson-style” preset</h4>
+          <ul>
+            <li>Source: <strong>HL2</strong></li>
+            <li>MA Type: <strong>SMMA (RMA)</strong></li>
+            <li>Fast Length: <strong>15</strong></li>
+            <li>Slow Length: <strong>29</strong></li>
+            <li>Use ATR Neutral Filter: <strong>ON</strong></li>
+            <li>ATR Length: <strong>60</strong></li>
+            <li>ATR Multiplier: <strong>0.3 – 0.5</strong></li>
+          </ul>
+        </div>
+        <div>
+          <h4>EMA “React quicker” preset</h4>
+          <ul>
+            <li>Source: <strong>HL2 or Close</strong></li>
+            <li>MA Type: <strong>EMA</strong></li>
+            <li>Fast Length: <strong>30</strong></li>
+            <li>Slow Length: <strong>60</strong></li>
+            <li>Use ATR Neutral Filter: <strong>ON</strong></li>
+            <li>ATR Length: <strong>60</strong></li>
+            <li>ATR Multiplier: <strong>0.3</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>How to use it</h3>
+      <ol>
+        <li>Apply the indicator and start with one of the presets.</li>
+        <li>Treat <strong>orange</strong> as bullish, <strong>blue</strong> as bearish, <strong>gray</strong> as neutral.</li>
+        <li>Use the ribbon as a context filter, not a signal generator.</li>
+        <li>Longer EMAs for higher timeframes (50/100), shorter EMAs for intraday (10/21).</li>
+      </ol>
+
+      <h3>Things to keep in mind</h3>
+      <ul>
+        <li>All moving averages lag.</li>
+        <li>Neutral zones help filter chop but are not perfect.</li>
+        <li>Always combine with risk management.</li>
+      </ul>
+    </section>
+
+    <section id="guides" class="section">
+      <h2>Guides & Concepts</h2>
+      <p class="section-intro">
+        This section will grow over time with practical guides.
+      </p>
+      <ul class="guide-list">
+        <li>• How dual moving-average ribbons differ from single MAs</li>
+        <li>• Combining ribbons with higher-timeframe bias</li>
+        <li>• Why ATR neutral zones reduce noise</li>
+      </ul>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About This Project</h2>
+      <p>
+        Most trading indicator content is locked behind paywalls.
+        This site exists to document useful tools openly, without upsells or hype.
+      </p>
+    </section>
+  </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> MySite. All rights reserved.</p>
+    <p>© <span id="year"></span> Free Trading Tools – Open Indicator Documentation</p>
   </footer>
 
   <script>
-    // Set footer year automatically
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
