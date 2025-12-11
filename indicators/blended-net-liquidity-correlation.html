@@ -8,7 +8,7 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">Open Indicator Lab</div>
+    <div class="logo"><a href="../index.html">Open Indicator Lab</a></div>
     <nav class="nav">
       <a href="../index.html#hero">Home</a>
       <a href="../index.html#indicators">Indicators</a>
@@ -29,7 +29,7 @@
     </p>
 
     <div class="doc-actions">
-      <a href="https://www.tradingview.com/script/3u6UCRSH-Blended-Net-Liquidity-Correlation/" 
+      <a href="https://www.tradingview.com/script/3u6UCRSH-Blended-Net-Liquidity-Correlation/"
          target="_blank" rel="noopener" class="btn-primary">
         Open on TradingView
       </a>
@@ -45,29 +45,31 @@
     <p>
       This script does not replicate or reverse-engineer any commercial macro indicator. Instead, it provides 
       a fully open-source, flexible structure for exploring how different liquidity components interact, and 
-      how those liquidity dynamics correlate with market price across various time windows.
+      how those liquidity dynamics correlate with market price across various time windows. All data comes 
+      from standard FRED series, and all calculations are fully disclosed for complete transparency.
     </p>
 
     <h2>What the Script Does</h2>
+
     <h3>1. Builds a customizable blended net-liquidity model</h3>
     <ul>
       <li>Includes WALCL, RRP, TGA, BTFP, ΔTOTLL, and ΔM2.</li>
       <li>Allows turning each component on/off.</li>
-      <li>Lets you adjust weighting for WALCL vs. non-WALCL components.</li>
+      <li>Provides adjustable weighting for WALCL vs. non-WALCL models.</li>
       <li>Supports optional SMA smoothing of the liquidity series.</li>
       <li>Supports time-offsetting liquidity to study lagging effects.</li>
     </ul>
 
     <h3>2. Runs multi-period price correlations</h3>
     <ul>
-      <li>Correlations over 30D, 60D, 90D, 180D, 1Y, 1.5Y, 2Y, and a custom length (default ~3 years).</li>
-      <li>Displays all correlation values in a compact table.</li>
+      <li>30D, 60D, 90D, 180D, 1Y, 1.5Y, 2Y, and a custom length window.</li>
+      <li>Displays all correlations in a compact table.</li>
       <li>Automatically highlights the highest-correlation window.</li>
     </ul>
 
-    <h3>3. Plots the blended liquidity model directly on the chart</h3>
+    <h3>3. Plots the blended liquidity model on the chart</h3>
     <ul>
-      <li>Plots liquidity as an overlay using the right-side scale.</li>
+      <li>Plots the liquidity series as an overlay using the right-side scale.</li>
       <li>Makes it easy to visually compare liquidity swings with price structure.</li>
     </ul>
 
