@@ -8,7 +8,7 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">Open Indicator Lab</div>
+    <div class="logo">Free Trading Tools</div>
     <nav class="nav">
       <a href="#hero">Home</a>
       <a href="#indicators">Indicators</a>
@@ -29,15 +29,17 @@
   </section>
 
   <main>
+    <!-- INDICATOR CARDS -->
     <section id="indicators" class="section">
       <h2>Indicators</h2>
       <p class="section-intro">
         Each indicator below is documented with philosophy, configuration, and practical usage notes.
       </p>
       <div class="cards">
+        <!-- Indicator 1 -->
         <article class="card">
           <h3>Adaptive Dual MA Trend Ribbon</h3>
-          <p class="tagline">Larsson-style trend ribbon using SMMA/EMA + ATR neutral zones.</p>
+          <p class="tagline">Larsson-style trend ribbon using SMMA/EMA with ATR-based neutral zones.</p>
           <ul class="pill-list">
             <li>Trend</li>
             <li>Overlay</li>
@@ -46,11 +48,31 @@
           </ul>
           <a href="#indicator-dual-ma-ribbon" class="btn-secondary">View docs</a>
         </article>
+
+        <!-- Indicator 2 (placeholder — edit name/text/URL later) -->
+        <article class="card">
+          <h3>Second Indicator Name</h3>
+          <p class="tagline">Short one-line description of what this indicator does.</p>
+          <ul class="pill-list">
+            <li>Category</li>
+            <li>Timeframe</li>
+            <li>Key concept</li>
+          </ul>
+          <a href="#indicator-second" class="btn-secondary">View docs</a>
+        </article>
       </div>
     </section>
 
+    <!-- INDICATOR DOCS: DUAL MA TREND RIBBON -->
     <section id="indicator-dual-ma-ribbon" class="section section-doc">
       <h2>Indicator Docs: Adaptive Dual MA Trend Ribbon</h2>
+
+      <div class="doc-actions">
+        <!-- TODO: replace REPLACE_WITH_TV_URL_1 with your real TradingView script URL -->
+        <a href="https://www.tradingview.com/script/REPLACE_WITH_TV_URL_1/" target="_blank" rel="noopener" class="btn-secondary">
+          Open on TradingView
+        </a>
+      </div>
 
       <h3>Overview</h3>
       <p>
@@ -90,20 +112,73 @@
 
       <h3>How to use it</h3>
       <ol>
-        <li>Apply the indicator and start with one of the presets.</li>
-        <li>Treat <strong>orange</strong> as bullish, <strong>blue</strong> as bearish, <strong>gray</strong> as neutral.</li>
-        <li>Use the ribbon as a context filter, not a signal generator.</li>
-        <li>Longer EMAs for higher timeframes (50/100), shorter EMAs for intraday (10/21).</li>
+        <li>Apply the indicator and start with one of the presets above.</li>
+        <li>Treat <strong>orange</strong> as bullish context, <strong>blue</strong> as bearish, and <strong>gray</strong> as neutral/chop.</li>
+        <li>Use the ribbon as a <strong>context filter</strong>, not as a stand-alone buy/sell system.</li>
+        <li>On higher timeframes (4H, 1D, 1W), consider slower MAs (e.g. EMA 50/100).</li>
+        <li>On intraday setups, test shorter EMAs (e.g. 10/21) and a smaller ATR multiplier.</li>
       </ol>
 
       <h3>Things to keep in mind</h3>
       <ul>
-        <li>All moving averages lag.</li>
-        <li>Neutral zones help filter chop but are not perfect.</li>
-        <li>Always combine with risk management.</li>
+        <li>All moving averages lag; the ribbon won’t catch exact tops or bottoms.</li>
+        <li>ATR-neutral zones help avoid chop but cannot remove all noise.</li>
+        <li>Always combine with risk management, position sizing, and stop placement.</li>
       </ul>
     </section>
 
+    <!-- INDICATOR DOCS: SECOND INDICATOR (TEMPLATE) -->
+    <section id="indicator-second" class="section section-doc">
+      <h2>Indicator Docs: Second Indicator Name</h2>
+
+      <div class="doc-actions">
+        <!-- TODO: replace REPLACE_WITH_TV_URL_2 with your second TradingView script URL -->
+        <a href="https://www.tradingview.com/script/REPLACE_WITH_TV_URL_2/" target="_blank" rel="noopener" class="btn-secondary">
+          Open on TradingView
+        </a>
+      </div>
+
+      <h3>Overview</h3>
+      <p>
+        Describe what this indicator does in plain English: what it measures, what problems it tries to
+        solve for traders, and how it should be used in a broader system (not as a standalone signal).
+      </p>
+
+      <h3>Default Settings (recommended starting point)</h3>
+      <div class="settings-grid">
+        <div>
+          <h4>Core preset</h4>
+          <ul>
+            <li>Input 1: <strong>value</strong></li>
+            <li>Input 2: <strong>value</strong></li>
+            <li>Timeframe: <strong>e.g. 4H / 1D</strong></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Alternative preset</h4>
+          <ul>
+            <li>Input 1: <strong>value</strong></li>
+            <li>Input 2: <strong>value</strong></li>
+            <li>Usage: <strong>scalping / swing / confirmation</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>How to use it</h3>
+      <ol>
+        <li>Explain how to read the core signal (e.g., crosses, colors, levels).</li>
+        <li>Explain what is good context vs. bad context for the tool.</li>
+        <li>Explain how you combine it with trend, structure, or volume.</li>
+      </ol>
+
+      <h3>Things to keep in mind</h3>
+      <ul>
+        <li>List limitations and common mistakes traders make with this indicator.</li>
+        <li>Warn about using it alone without context or risk management.</li>
+      </ul>
+    </section>
+
+    <!-- GUIDES -->
     <section id="guides" class="section">
       <h2>Guides & Concepts</h2>
       <p class="section-intro">
@@ -116,11 +191,17 @@
       </ul>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="section">
       <h2>About This Project</h2>
       <p>
-        Most trading indicator content is locked behind paywalls.
-        This site exists to document useful tools openly, without upsells or hype.
+        Most trading indicator content is locked behind paywalls and sales funnels.
+        This site exists to document useful tools for traders in a clear, structured,
+        and honest way – with open settings and open discussion of strengths and limitations.
+      </p>
+      <p>
+        Tools here are provided for research and education only. Nothing on this site
+        is financial advice or a guarantee of results.
       </p>
     </section>
   </main>
