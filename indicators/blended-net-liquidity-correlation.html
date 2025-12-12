@@ -2,144 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Blended Net Liquidity Correlation – Open Indicator Lab</title>
+  <title>Blended Net Liquidity Correlation – Docs | Open Indicator Lab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Lato -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css?v=1001" />
 </head>
 <body>
+
   <header class="site-header">
-    <div class="logo"><a href="../index.html">Open Indicator Lab</a></div>
-    <nav class="nav">
-      <a href="../index.html#hero">Home</a>
-      <a href="../index.html#indicators">Indicators</a>
-      <a href="../index.html#about">About</a>
-    </nav>
+    <div class="header-inner">
+      <div class="logo"><a href="../index.html">Open Indicator Lab</a></div>
+      <nav class="nav">
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#indicators">Indicators</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
   </header>
 
+  <div class="top-shelf" aria-hidden="true"></div>
+
   <main class="section section-doc">
-    <p class="section-intro">
-      <a href="../index.html#indicators" class="btn-secondary">← Back to all indicators</a>
-    </p>
+    <div class="container">
 
-    <h1>Blended Net Liquidity Correlation</h1>
-    <p class="section-intro">
-      A free macro tool that builds a blended net-liquidity model from FRED data and 
-      measures how strongly that liquidity has moved with price across multiple time windows. 
-      The indicator is free to use on TradingView; the script is protected.
-    </p>
+      <p class="section-intro">
+        <a href="../index.html#indicators" class="btn-secondary">← Back to all indicators</a>
+      </p>
 
-    <div class="doc-actions">
-      <a href="https://www.tradingview.com/script/3u6UCRSH-Blended-Net-Liquidity-Correlation/"
-         target="_blank" rel="noopener" class="btn-primary">
-        Open on TradingView
-      </a>
+      <h1>Blended Net Liquidity Correlation</h1>
+
+      <p class="section-intro">
+        A free macro tool that builds a blended net-liquidity model from FRED data and measures how strongly that liquidity has moved with price across multiple time windows.
+        The indicator is <strong>free to use</strong> on TradingView; the script is protected.
+      </p>
+
+      <div class="doc-actions">
+        <a href="https://www.tradingview.com/script/3u6UCRSH-Blended-Net-Liquidity-Correlation/"
+           target="_blank" rel="noopener" class="btn-primary">Open on TradingView</a>
+      </div>
+
+      <h2>Overview</h2>
+
+      <p>
+        Many traders use liquidity-based models to understand broad macro conditions and their potential influence on price. While institutional-grade models often rely on
+        proprietary inputs, the community frequently studies public FRED series—such as WALCL, RRP, TGA, and BTFP—to construct transparent net-liquidity frameworks that
+        approximate capital movement within the financial system.
+      </p>
+
+      <p>
+        This script does not replicate or reverse-engineer any commercial macro indicator. Instead, it provides a flexible structure for exploring how different liquidity
+        components interact, and how those liquidity dynamics correlate with market price across various time windows. All data comes from standard FRED series, and all
+        calculations are described at a high level for transparency.
+      </p>
+
+      <h2>What the Script Does</h2>
+
+      <h3>1. Builds a customizable blended net-liquidity model</h3>
+      <ul>
+        <li>Includes WALCL, RRP, TGA, BTFP, ΔTOTLL, and ΔM2.</li>
+        <li>Allows turning each component on/off.</li>
+        <li>Provides adjustable weighting for WALCL vs. non-WALCL models.</li>
+        <li>Supports optional SMA smoothing of the liquidity series.</li>
+        <li>Supports time-offsetting liquidity to study lagging effects.</li>
+      </ul>
+
+      <h3>2. Runs multi-period price correlations</h3>
+      <ul>
+        <li>30D, 60D, 90D, 180D, 1Y, 1.5Y, 2Y, and a custom-length window.</li>
+        <li>Displays all correlations in a compact table.</li>
+        <li>Automatically highlights the highest-correlation window.</li>
+      </ul>
+
     </div>
-
-    <!-- OPTIONAL: TradingView embed iframe can go here, same as in the other doc -->
-
-    <h2>Overview</h2>
-    <p>
-      Many traders use liquidity-based models to understand broad macro conditions and their potential influence 
-      on price. While institutional-grade models often rely on proprietary inputs, the community frequently 
-      studies public FRED series—such as WALCL, RRP, TGA, and BTFP—to construct transparent net-liquidity 
-      frameworks that approximate capital movement within the financial system.
-    </p>
-    <p>
-      This script does not replicate or reverse-engineer any commercial macro indicator. Instead, it provides 
-      a flexible structure for exploring how different liquidity components interact, and how those liquidity 
-      dynamics correlate with market price across various time windows. All data comes from standard FRED series, 
-      and all calculations are described at a high level for transparency.
-    </p>
-
-    <h2>What the Script Does</h2>
-
-    <h3>1. Builds a customizable blended net-liquidity model</h3>
-    <ul>
-      <li>Includes WALCL, RRP, TGA, BTFP, ΔTOTLL, and ΔM2.</li>
-      <li>Allows turning each component on/off.</li>
-      <li>Provides adjustable weighting for WALCL vs. non-WALCL models.</li>
-      <li>Supports optional SMA smoothing of the liquidity series.</li>
-      <li>Supports time-offsetting liquidity to study lagging effects.</li>
-    </ul>
-
-    <h3>2. Runs multi-period price correlations</h3>
-    <ul>
-      <li>30D, 60D, 90D, 180D, 1Y, 1.5Y, 2Y, and a custom-length window.</li>
-      <li>Displays all correlations in a compact table.</li>
-      <li>Automatically highlights the highest-correlation window.</li>
-    </ul>
-
-    <h3>3. Plots the blended liquidity model on the chart</h3>
-    <ul>
-      <li>Plots the liquidity series as an overlay using the right-side scale.</li>
-      <li>Makes it easy to visually compare liquidity swings with price structure.</li>
-    </ul>
-
-    <h3>4. Maintains clarity and flexibility</h3>
-    <ul>
-      <li>All data is sourced from public FRED datasets.</li>
-      <li>No proprietary external data feeds.</li>
-      <li>Designed for research, modification of settings, and hypothesis testing.</li>
-    </ul>
-
-    <h2>Why This Script Is Useful</h2>
-    <p>
-      Traditional liquidity charts often plot one variable at a time. This model adds clarity by:
-    </p>
-    <ol>
-      <li>Combining multiple macro liquidity components into a single blended series.</li>
-      <li>Giving you full control over which components are included.</li>
-      <li>Producing a smooth output that’s easier to compare with price.</li>
-      <li>Providing multi-window correlation analysis so you can see when price and liquidity have moved together.</li>
-      <li>Helping you explore whether liquidity tends to lead, lag, or coincide with price on your asset of interest.</li>
-    </ol>
-    <p>
-      It’s most useful for macro-focused traders, swing traders, crypto/macro analysts, and anyone who wants 
-      a transparent way to integrate liquidity into their framework without buying expensive black-box tools.
-    </p>
-
-    <h2>What This Script Is Not</h2>
-    <ul>
-      <li>Not a recreation of any commercial macro model.</li>
-      <li>Not financial advice or a predictive “signal” tool.</li>
-      <li>Not a proprietary liquidity algorithm.</li>
-      <li>All calculations rely solely on publicly available FRED time series.</li>
-    </ul>
-
-    <h2>How to Use</h2>
-    <ol>
-      <li>Select which liquidity components you want included.</li>
-      <li>Adjust WALCL blending to emphasize or down-weight balance-sheet effects.</li>
-      <li>Optionally apply smoothing or a time offset to test hypotheses about lead/lag.</li>
-      <li>Observe liquidity trend direction relative to price.</li>
-      <li>Use the correlation table to see which windows have historically tracked price best.</li>
-      <li>Combine with structure, volume, and trend analysis for a full macro-technical picture.</li>
-    </ol>
-
-    <h2>Important Notes</h2>
-    <ul>
-      <li>FRED data updates weekly and may revise historical values.</li>
-      <li>Correlation does not imply causation – it measures relationship, not predictiveness.</li>
-      <li>Liquidity models are approximations, not definitive macro forecasts.</li>
-      <li>Always validate settings across multiple assets and timeframes.</li>
-    </ul>
-
-    <h2>Disclaimer</h2>
-    <p>
-      This script is for research and educational purposes only. Always use proper risk management and 
-      validate any idea before trading live.
-    </p>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Open Indicator Lab – Blended Net Liquidity Correlation Docs</p>
+    <div class="container">
+      <p>© <span id="year"></span> Blended Net Liquidity Correlation – Docs | Open Indicator Lab</p>
+    </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
