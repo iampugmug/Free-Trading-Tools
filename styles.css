@@ -1,6 +1,15 @@
-/* Reset */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+/* =========================
+   VARIABLES
+========================= */
 :root{
   --bg:#f4f6f8;
   --surface:#ffffff;
@@ -15,43 +24,74 @@
   --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 18px rgba(0,0,0,0.08);
 }
 
-/* Base / Safari hardening */
-html, body { min-height: 100%; }
+/* =========================
+   BASE
+========================= */
+html, body {
+  min-height: 100%;
+}
+
 body{
   font-family:"Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.75;
   font-size:17px;
+  line-height:1.75;
   overflow-x:hidden;
   -webkit-text-size-adjust:100%;
 }
-main{ display:block; overflow:visible; }
 
-/* Typography */
-h1,h2,h3{ font-weight:900; letter-spacing:0.005em; }
-h1{ font-size:clamp(2.3rem, 4vw, 3.1rem); }
-h2{ font-size:1.55rem; margin-bottom:0.6rem; }
-h3{ font-size:1.22rem; }
-p{ margin-bottom:1rem; }
+main{
+  display:block;
+  overflow:visible;
+}
 
-/* Layout */
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1, h2, h3{
+  font-weight:900;
+  letter-spacing:0.005em;
+}
+
+h1{
+  font-size:clamp(2.3rem, 4vw, 3.1rem);
+}
+
+h2{
+  font-size:1.55rem;
+}
+
+h3{
+  font-size:1.22rem;
+}
+
+p{
+  margin-bottom:1rem;
+}
+
+/* =========================
+   LAYOUT
+========================= */
 .container{
   max-width:1100px;
   margin:0 auto;
   padding:0 1.75rem;
 }
 
-/* Make sections tighter so About moves up */
-.section{ padding:2.6rem 0; }
+.section{
+  padding:2.6rem 0;
+}
 
 .section-intro{
   color:var(--muted);
-  margin-bottom:1.2rem; /* tighter */
   max-width:1000px;
+  margin-bottom:1.2rem;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 .site-header{
   position:sticky;
   top:0;
@@ -59,24 +99,35 @@ p{ margin-bottom:1rem; }
   background:var(--surface);
   border-bottom:1px solid var(--border);
   box-shadow:var(--shadow);
-  -webkit-transform:translateZ(0);
 }
+
 .header-inner{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:0.45rem 1.75rem;
 }
+
 .logo{
   font-weight:900;
   letter-spacing:0.09em;
   font-size:1.1rem;
   text-transform:uppercase;
 }
-.logo a{ color:var(--text); text-decoration:none; }
-.logo a:hover{ color:var(--blueInk); }
 
-.nav{ display:flex; }
+.logo a{
+  color:var(--text);
+  text-decoration:none;
+}
+
+.logo a:hover{
+  color:var(--blueInk);
+}
+
+.nav{
+  display:flex;
+}
+
 .nav a{
   margin-left:1.5rem;
   font-size:0.95rem;
@@ -84,30 +135,45 @@ p{ margin-bottom:1rem; }
   color:var(--muted);
   text-decoration:none;
 }
-.nav a:hover{ color:var(--text); }
 
+.nav a:hover{
+  color:var(--text);
+}
+
+/* =========================
+   TOP SHELF
+========================= */
 .top-shelf{
   height:10px;
   background:linear-gradient(#f7f8fb,#f0f2f6);
   border-bottom:1px solid var(--border);
 }
 
-/* Hero: move content down a bit, reduce gap below */
+/* =========================
+   HERO
+========================= */
 .hero{
   background: linear-gradient(90deg,#e7f1ff,#f1f5ff);
-  border-bottom: 1px solid var(--border);
-  padding: 4.2rem 0 2.4rem;  /* more top, less bottom */
+  border-bottom:1px solid var(--border);
+  padding:4.2rem 0 2.4rem;
 }
-.hero-inner{ max-width:920px; }
+
+.hero-inner{
+  max-width:920px;
+}
+
 .hero p{
   margin-top:0.9rem;
-  margin-bottom:1.2rem; /* less gap before button */
+  margin-bottom:1.2rem;
   color:#1f2937;
   line-height:1.85;
 }
 
-/* Buttons */
-.btn-primary,.btn-secondary{
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary,
+.btn-secondary{
   display:inline-block;
   width:auto;
   padding:0.68rem 1.5rem;
@@ -115,12 +181,17 @@ p{ margin-bottom:1rem; }
   font-weight:800;
   text-decoration:none;
 }
+
 .btn-primary{
   background:var(--blue);
   color:#fff;
   border:1px solid var(--blue);
 }
-.btn-primary:hover{ background:var(--blueHover); border-color:var(--blueHover); }
+
+.btn-primary:hover{
+  background:var(--blueHover);
+  border-color:var(--blueHover);
+}
 
 .btn-secondary{
   background:transparent;
@@ -128,14 +199,21 @@ p{ margin-bottom:1rem; }
   border:1px solid #c7d2fe;
   padding:0.58rem 1.35rem;
 }
-.btn-secondary:hover{ background:#eef2ff; border-color:#93c5fd; }
 
-/* Cards */
+.btn-secondary:hover{
+  background:#eef2ff;
+  border-color:#93c5fd;
+}
+
+/* =========================
+   CARDS (HOME)
+========================= */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:2rem;
 }
+
 .card{
   background:var(--surface);
   border-radius:1rem;
@@ -145,7 +223,10 @@ p{ margin-bottom:1rem; }
   display:flex;
   flex-direction:column;
 }
-.card h3{ margin-bottom:0.35rem; }
+
+.card h3{
+  margin-bottom:0.35rem;
+}
 
 .tagline{
   color:var(--muted);
@@ -161,6 +242,7 @@ p{ margin-bottom:1rem; }
   gap:0.45rem;
   margin-bottom:1.25rem;
 }
+
 .pill-list li{
   padding:0.25rem 0.7rem;
   border-radius:999px;
@@ -169,9 +251,14 @@ p{ margin-bottom:1rem; }
   background:#f9fafb;
   color:#374151;
 }
-.card-actions{ margin-top:auto; }
 
-/* Indicator nav */
+.card-actions{
+  margin-top:auto;
+}
+
+/* =========================
+   INDICATOR NAV
+========================= */
 .indicator-nav{
   display:flex;
   gap:0.6rem;
@@ -179,12 +266,13 @@ p{ margin-bottom:1rem; }
   margin-bottom:2rem;
 }
 
-/* Space under TradingView button row */
 .doc-actions{
-  margin: 0.75rem 0 1.35rem;
+  margin:0.75rem 0 1.35rem;
 }
 
-/* Screenshot “embedded chart” */
+/* =========================
+   SCREENSHOT CHART
+========================= */
 .chart-shot{
   display:block;
   border:1px solid var(--border);
@@ -192,24 +280,58 @@ p{ margin-bottom:1rem; }
   overflow:hidden;
   background:#fff;
   box-shadow:0 10px 24px rgba(0,0,0,0.06);
-  margin: 0.75rem 0 0.8rem;
+  margin:0.75rem 0 0.8rem;
 }
+
 .chart-shot img{
   width:100%;
   height:auto;
   display:block;
 }
+
 .chart-shot-caption{
   color:var(--muted);
   font-size:0.92rem;
-  margin-bottom: 2.0rem;
+  margin-bottom:2rem;
 }
 
-/* Extra spacing helpers (for your requested section gaps) */
-.spacer-lg{ height: 1.25rem; }
-.spacer-xl{ height: 1.8rem; }
+/* =========================
+   CONTENT RHYTHM (IMPORTANT)
+   Makes spacing uniform like Word
+========================= */
+.section-doc h2,
+.section-doc p,
+.section-doc ul,
+.section-doc ol{
+  margin-top:0;
+}
 
-/* Footer */
+.section-doc h2{
+  margin-top:2.2rem;
+  margin-bottom:0.8rem;
+}
+
+.section-doc h2:first-of-type{
+  margin-top:1.4rem;
+}
+
+.section-doc p{
+  margin-bottom:1.1rem;
+}
+
+.section-doc ul,
+.section-doc ol{
+  margin-bottom:1.2rem;
+  padding-left:1.4rem;
+}
+
+.section-doc li{
+  margin-bottom:0.45rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
 .site-footer{
   border-top:1px solid var(--border);
   padding:0.9rem 0;
@@ -219,9 +341,14 @@ p{ margin-bottom:1rem; }
   justify-content:center;
   align-items:center;
 }
-.site-footer p{ margin:0; }
 
-/* Mobile */
+.site-footer p{
+  margin:0;
+}
+
+/* =========================
+   MOBILE
+========================= */
 @media (max-width:768px){
   .nav{ display:none; }
   .container{ padding:0 1.25rem; }
