@@ -1,9 +1,5 @@
 /* ========== Reset ========== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 /* ========== Base Typography ========== */
 body {
@@ -11,61 +7,36 @@ body {
   background: #f4f6f8;
   color: #111827;
   line-height: 1.8;
-  font-size: 17px; /* slightly larger, Investopedia-like */
+  font-size: 17px;
 }
 
-h1, h2, h3 {
-  font-weight: 700;
-  letter-spacing: 0.01em;
-}
+h1, h2, h3 { font-weight: 700; letter-spacing: 0.01em; }
+h1 { font-size: clamp(2.4rem, 4vw, 3.2rem); }
+h2 { font-size: 1.6rem; margin-bottom: 0.6rem; }
+h3 { font-size: 1.15rem; }
 
-h1 {
-  font-size: clamp(2.4rem, 4vw, 3.2rem);
-}
-
-h2 {
-  font-size: 1.6rem;
-}
-
-h3 {
-  font-size: 1.15rem;
-}
-
-/* ========== Layout Widths ========== */
-.section {
-  padding: 3.75rem 1.75rem;
+/* ========== Global content width helper ========== */
+.container {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 0 1.75rem;
 }
 
-.section-intro {
-  max-width: 760px;
-  margin-bottom: 2rem;
-  color: #374151;
-}
-
-.hero p {
-  max-width: 820px;
-}
-
-.body-text {
-  max-width: 700px;
-}
-
-/* ========== Header (Investopedia-style) ========== */
+/* ========== Header ========== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 6px 16px rgba(0,0,0,0.08); /* slightly thicker */
+}
+
+.site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.9rem 2rem;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow:
-    0 1px 2px rgba(0,0,0,0.04),
-    0 4px 12px rgba(0,0,0,0.06);
+  padding: 0.9rem 0;
 }
 
 .logo {
@@ -80,9 +51,7 @@ h3 {
   text-decoration: none;
 }
 
-.logo a:hover {
-  color: #1d4ed8;
-}
+.logo a:hover { color: #1d4ed8; }
 
 .nav a {
   margin-left: 1.75rem;
@@ -91,60 +60,67 @@ h3 {
   color: #4b5563;
 }
 
-.nav a:hover {
-  color: #111827;
+.nav a:hover { color: #111827; }
+
+/* ========== Sections ========== */
+.section { padding: 3.75rem 0; }
+
+.section p { margin-bottom: 1rem; }
+
+.section-intro {
+  color: #374151;
+  margin-bottom: 2rem;
+  max-width: 1000px; /* make intros wide like About */
 }
 
 /* ========== Hero ========== */
 .hero {
   background: linear-gradient(90deg, #e7f1ff, #f1f5ff);
   border-bottom: 1px solid #e5e7eb;
+  padding: 4rem 0 3.25rem;
 }
 
-.hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
+.hero-inner { max-width: 900px; } /* wider so it doesn't feel cramped */
 
 .hero p {
   margin-top: 1rem;
   margin-bottom: 2.25rem;
   color: #1f2937;
+  line-height: 1.9;
 }
 
 /* ========== Buttons ========== */
-.btn-primary {
-  background: #2563eb;
-  color: #ffffff;
-  border: 1px solid #1d4ed8;
+.btn-primary, .btn-secondary {
+  display: inline-block;          /* prevents full-width stretching */
+  width: auto;
   padding: 0.7rem 1.5rem;
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.btn-primary:hover {
-  background: #1d4ed8;
+.btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+  border: 1px solid #1d4ed8;
 }
+
+.btn-primary:hover { background: #1d4ed8; }
 
 .btn-secondary {
   background: transparent;
   color: #2563eb;
   border: 1px solid #c7d2fe;
   padding: 0.6rem 1.4rem;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
 }
 
-.btn-secondary:hover {
-  background: #eef3ff;
-}
+.btn-secondary:hover { background: #eef3ff; }
 
 /* ========== Cards ========== */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 }
 
@@ -164,7 +140,6 @@ h3 {
   min-height: 3.6rem;
 }
 
-/* Pills */
 .pill-list {
   list-style: none;
   display: flex;
@@ -181,32 +156,20 @@ h3 {
   background: #f9fafb;
 }
 
-/* Push button to bottom */
-.card a {
-  margin-top: auto;
-}
+/* push only the button container to bottom, not every <a> */
+.card .card-actions { margin-top: auto; }
 
-/* ========== Docs Pages ========== */
-.section-doc h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 0.75rem;
-}
+/* ========== Docs pages ========== */
+.section-doc p { max-width: 1000px; }      /* wider paragraphs like your Liquidity page */
+.section-doc ul, .section-doc ol { max-width: 1000px; }
 
-.section-doc p {
-  margin-bottom: 1.25rem;
-}
-
-.section-doc ul,
-.section-doc ol {
-  margin-left: 1.2rem;
-  margin-bottom: 1.25rem;
-}
+.section-doc h2 { margin-top: 2.5rem; margin-bottom: 0.75rem; }
 
 /* ========== Footer ========== */
 .site-footer {
   background: #ffffff;
   border-top: 1px solid #e5e7eb;
-  padding: 1.75rem;
+  padding: 1.75rem 0;
   text-align: center;
   color: #6b7280;
   font-size: 0.85rem;
@@ -214,11 +177,9 @@ h3 {
 
 /* ========== Mobile ========== */
 @media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
-
-  .section {
-    padding: 2.75rem 1.25rem;
-  }
+  .nav { display: none; }
+  .container { padding: 0 1.25rem; }
+  .hero { padding: 3rem 0 2.75rem; }
+  .section { padding: 2.75rem 0; }
+  .cards { grid-template-columns: 1fr; }
 }
