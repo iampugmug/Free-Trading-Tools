@@ -1,168 +1,193 @@
-/* =========================
-   RESET & BASE
-========================= */
+/* Reset */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html, body {
-  min-height: 100%;
+:root{
+  --bg:#f4f6f8;
+  --surface:#fff;
+  --text:#111827;
+  --muted:#4b5563;
+  --border:#e5e7eb;
+
+  --blue:#1e40af;
+  --blueHover:#1e3a8a;
+  --blueInk:#1d4ed8;
+
+  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 18px rgba(0,0,0,0.08);
 }
 
+/* Base / Safari hardening */
+html, body { min-height: 100%; }
 body{
-  font-family: "Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
-  background: #f4f6f8;
-  color: #111827;
-  line-height: 1.75;
-  font-size: 17px;
-  overflow-x: hidden;
-  -webkit-text-size-adjust: 100%;
+  font-family:"Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.75;
+  font-size:17px;
+  overflow-x:hidden;
+  -webkit-text-size-adjust:100%;
 }
+main{ display:block; overflow:visible; }
 
-main {
-  display: block;
-  overflow: visible;
-}
+/* Typography */
+h1,h2,h3{ font-weight:900; letter-spacing:0.005em; }
+h1{ font-size:clamp(2.3rem, 4vw, 3.1rem); }
+h2{ font-size:1.55rem; margin-bottom:0.6rem; }
+h3{ font-size:1.22rem; }
+p{ margin-bottom:1rem; }
 
-/* =========================
-   TYPOGRAPHY
-========================= */
-h1, h2, h3{
-  font-weight: 900;
-  letter-spacing: 0.005em;
-}
-
-h1{ font-size: clamp(2.3rem, 4vw, 3.1rem); }
-h2{ font-size: 1.55rem; margin-bottom: 0.6rem; }
-h3{ font-size: 1.22rem; }
-
-p{ margin-bottom: 1rem; }
-
-/* =========================
-   LAYOUT
-========================= */
 .container{
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.75rem;
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 1.75rem;
 }
 
-.section{
-  padding: 3.5rem 0;
-}
-
+.section{ padding:3.5rem 0; }
 .section-intro{
-  color: #4b5563;
-  margin-bottom: 2rem;
-  max-width: 1000px;
+  color:var(--muted);
+  margin-bottom:2rem;
+  max-width:1000px;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* Header */
 .site-header{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 18px rgba(0,0,0,0.08);
-  -webkit-transform: translateZ(0);
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  box-shadow:var(--shadow);
+  -webkit-transform:translateZ(0);
 }
-
 .header-inner{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.45rem 1.75rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0.45rem 1.75rem;
 }
-
 .logo{
-  font-weight: 900;
-  letter-spacing: 0.09em;
-  font-size: 1.1rem;
-  text-transform: uppercase;
+  font-weight:900;
+  letter-spacing:0.09em;
+  font-size:1.1rem;
+  text-transform:uppercase;
 }
+.logo a{ color:var(--text); text-decoration:none; }
+.logo a:hover{ color:var(--blueInk); }
 
-.logo a{
-  color: #111827;
-  text-decoration: none;
-}
-
-.nav{
-  display: flex;
-}
-
+.nav{ display:flex; }
 .nav a{
-  margin-left: 1.5rem;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #4b5563;
-  text-decoration: none;
+  margin-left:1.5rem;
+  font-size:0.95rem;
+  font-weight:700;
+  color:var(--muted);
+  text-decoration:none;
 }
+.nav a:hover{ color:var(--text); }
 
-/* =========================
-   SHELF
-========================= */
 .top-shelf{
-  height: 10px;
-  background: linear-gradient(#f7f8fb,#f0f2f6);
-  border-bottom: 1px solid #e5e7eb;
+  height:10px;
+  background:linear-gradient(#f7f8fb,#f0f2f6);
+  border-bottom:1px solid var(--border);
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* Buttons */
 .btn-primary,.btn-secondary{
   display:inline-block;
+  width:auto;
   padding:0.68rem 1.5rem;
   border-radius:999px;
   font-weight:800;
   text-decoration:none;
 }
-
 .btn-primary{
-  background:#1e40af;
+  background:var(--blue);
   color:#fff;
-  border:1px solid #1e40af;
+  border:1px solid var(--blue);
 }
-
+.btn-primary:hover{ background:var(--blueHover); border-color:var(--blueHover); }
 .btn-secondary{
   background:transparent;
-  color:#1e40af;
+  color:var(--blue);
   border:1px solid #c7d2fe;
+  padding:0.58rem 1.35rem;
 }
+.btn-secondary:hover{ background:#eef2ff; border-color:#93c5fd; }
 
-/* =========================
-   INDICATOR NAV
-========================= */
+/* Cards (homepage) */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:2rem;
+}
+.card{
+  background:var(--surface);
+  border-radius:1rem;
+  padding:1.75rem;
+  border:1px solid var(--border);
+  box-shadow:0 10px 24px rgba(0,0,0,0.07);
+  display:flex;
+  flex-direction:column;
+}
+.card h3{ margin-bottom:0.35rem; }
+.tagline{
+  color:var(--muted);
+  margin:0.75rem 0 1.15rem;
+  min-height:3.4rem;
+  font-size:0.95rem;
+}
+.pill-list{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.45rem;
+  margin-bottom:1.25rem;
+}
+.pill-list li{
+  padding:0.25rem 0.7rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  font-size:0.75rem;
+  background:#f9fafb;
+  color:#374151;
+}
+.card-actions{ margin-top:auto; }
+
+/* Indicator nav */
 .indicator-nav{
   display:flex;
   gap:0.6rem;
+  flex-wrap:wrap;
   margin-bottom:2rem;
 }
 
-/* =========================
-   TRADINGVIEW EMBED
-========================= */
-.tv-embed{
-  margin: 1.5rem 0 2.5rem;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
+/* Space under TradingView button row */
+.doc-actions{
+  margin: 0.75rem 0 1.35rem;
 }
 
-.tv-embed iframe{
-  width: 100%;
-  height: 520px;
-  border: 0;
-  display: block;
+/* Screenshot “embedded chart” */
+.chart-shot{
+  display:block;
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 10px 24px rgba(0,0,0,0.06);
+  margin: 0.75rem 0 0.8rem;
+}
+.chart-shot img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.chart-shot-caption{
+  color:var(--muted);
+  font-size:0.92rem;
+  margin-bottom: 2.25rem;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* Footer */
 .site-footer{
-  border-top:1px solid #e5e7eb;
+  border-top:1px solid var(--border);
   padding:0.9rem 0;
   font-size:0.85rem;
   color:#6b7280;
@@ -170,13 +195,11 @@ p{ margin-bottom: 1rem; }
   justify-content:center;
   align-items:center;
 }
-
 .site-footer p{ margin:0; }
 
-/* =========================
-   MOBILE
-========================= */
+/* Mobile */
 @media (max-width:768px){
   .nav{ display:none; }
   .container{ padding:0 1.25rem; }
+  .header-inner{ padding:0.45rem 1.25rem; }
 }
