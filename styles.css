@@ -7,21 +7,39 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #0b1120;
-  color: #e5e7eb;
-  line-height: 1.6;
+  background: #f9fafb;
+  color: #111827;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* Generic typography */
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #111827;
+}
+
+.section h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Add comfortable paragraph spacing, but not on tiny helper texts */
+.section p {
+  margin-bottom: 0.9rem;
 }
 
 /* Layout */
 .section {
   padding: 3.5rem 1.5rem;
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
 .section-intro {
-  margin-bottom: 1.2rem;
-  color: #9ca3af;
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+  max-width: 720px;
 }
 
 /* Header */
@@ -32,91 +50,92 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1.5rem;
-  background: rgba(15, 23, 42, 0.93);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 0.9rem 1.75rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .logo {
   font-weight: 700;
-  letter-spacing: 0.06em;
-  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
 .logo a {
-  color: #facc15;
+  color: #111827;
   text-decoration: none;
 }
 
 .logo a:hover {
-  opacity: 0.9;
+  color: #1d4ed8;
 }
 
 .nav a {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   text-decoration: none;
-  font-size: 0.9rem;
-  color: #e5e7eb;
+  font-size: 0.95rem;
+  color: #4b5563;
 }
 
 .nav a:hover {
-  color: #facc15;
+  color: #111827;
 }
 
 /* Hero */
 .hero {
-  padding: 4.5rem 1.5rem 3.5rem;
-  background: radial-gradient(circle at top left, #22d3ee, #0f172a);
+  padding: 4rem 1.75rem 3.25rem;
+  background: linear-gradient(90deg, #e0f2fe, #eff6ff);
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .hero-inner {
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
 .hero h1 {
-  font-size: clamp(2.1rem, 4vw, 3rem);
+  font-size: clamp(2.2rem, 4vw, 3rem);
   margin-bottom: 1rem;
 }
 
 .hero p {
-  margin-bottom: 1.5rem;
-  max-width: 640px;
-  color: #e5e7eb;
+  margin-bottom: 1.6rem;
+  max-width: 700px;
+  color: #1f2933;
 }
 
 /* Buttons */
 .btn-primary,
 .btn-secondary {
   display: inline-block;
-  padding: 0.6rem 1.3rem;
+  padding: 0.65rem 1.4rem;
   border-radius: 999px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-decoration: none;
   cursor: pointer;
 }
 
 .btn-primary {
-  background: #facc15;
-  color: #111827;
-  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  border: 1px solid #1d4ed8;
 }
 
 .btn-primary:hover {
-  filter: brightness(1.05);
+  background: #1d4ed8;
 }
 
 .btn-secondary {
   background: transparent;
-  color: #facc15;
-  border: 1px solid #facc15;
+  color: #2563eb;
+  border: 1px solid #cbd5f5;
 }
 
 .btn-secondary:hover {
-  background: rgba(250, 204, 21, 0.08);
+  border-color: #2563eb;
+  background: #eff6ff;
 }
 
 /* Cards */
@@ -128,24 +147,24 @@ body {
 }
 
 .card {
-  background: #020617;
+  background: #ffffff;
   border-radius: 0.9rem;
   padding: 1.5rem;
-  border: 1px solid rgba(148, 163, 184, 0.4);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.75);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
   display: flex;
   flex-direction: column;
 }
 
 .card h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.45rem;
 }
 
 /* Keep descriptions roughly same height so pills/buttons line up */
 .tagline {
   font-size: 0.9rem;
-  color: #9ca3af;
-  margin-bottom: 0.75rem;
+  color: #4b5563;
+  margin-bottom: 0.85rem;
   min-height: 3rem; /* ~2 lines on desktop */
 }
 
@@ -154,15 +173,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
 }
 
 .pill-list li {
-  padding: 0.15rem 0.6rem;
+  padding: 0.2rem 0.65rem;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
+  border: 1px solid #e5e7eb;
   font-size: 0.75rem;
-  color: #cbd5f5;
+  color: #374151;
+  background: #f9fafb;
 }
 
 /* Make buttons sit at bottom of card */
@@ -173,14 +193,18 @@ body {
 }
 
 /* Indicator docs */
-.section-doc h1,
+.section-doc h1 {
+  margin-bottom: 0.75rem;
+}
+
 .section-doc h2 {
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
 }
 
 .section-doc h3 {
-  margin-top: 1.75rem;
-  margin-bottom: 0.6rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .settings-grid {
@@ -191,7 +215,7 @@ body {
 }
 
 .settings-grid h4 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.45rem;
 }
 
 .settings-grid ul {
@@ -202,32 +226,43 @@ body {
 
 /* TradingView link button spacing */
 .doc-actions {
-  margin: 0.75rem 0 0.5rem;
-}
-
-/* Guides */
-.guide-list {
-  list-style: none;
-  font-size: 0.95rem;
-}
-
-.guide-list li {
-  margin-bottom: 0.4rem;
+  margin: 0.9rem 0 0.3rem;
 }
 
 /* Footer */
 .site-footer {
   padding: 1.5rem;
   text-align: center;
-  color: #9ca3af;
+  color: #6b7280;
   font-size: 0.8rem;
-  border-top: 1px solid rgba(148, 163, 184, 0.4);
-  margin-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 2.5rem;
+  background: #ffffff;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+/* Mobile tweaks */
+@media (max-width: 700px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
   .nav {
-    display: none; /* simple mobile version for now */
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .nav a {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+  .hero {
+    padding: 3rem 1.25rem 2.75rem;
+  }
+
+  .section {
+    padding: 2.75rem 1.25rem;
   }
 }
