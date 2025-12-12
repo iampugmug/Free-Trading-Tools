@@ -3,7 +3,7 @@
 
 :root{
   --bg:#f4f6f8;
-  --surface:#fff;
+  --surface:#ffffff;
   --text:#111827;
   --muted:#4b5563;
   --border:#e5e7eb;
@@ -35,16 +35,19 @@ h2{ font-size:1.55rem; margin-bottom:0.6rem; }
 h3{ font-size:1.22rem; }
 p{ margin-bottom:1rem; }
 
+/* Layout */
 .container{
   max-width:1100px;
   margin:0 auto;
   padding:0 1.75rem;
 }
 
-.section{ padding:3.5rem 0; }
+/* Make sections tighter so About moves up */
+.section{ padding:2.6rem 0; }
+
 .section-intro{
   color:var(--muted);
-  margin-bottom:2rem;
+  margin-bottom:1.2rem; /* tighter */
   max-width:1000px;
 }
 
@@ -89,6 +92,20 @@ p{ margin-bottom:1rem; }
   border-bottom:1px solid var(--border);
 }
 
+/* Hero: move content down a bit, reduce gap below */
+.hero{
+  background: linear-gradient(90deg,#e7f1ff,#f1f5ff);
+  border-bottom: 1px solid var(--border);
+  padding: 4.2rem 0 2.4rem;  /* more top, less bottom */
+}
+.hero-inner{ max-width:920px; }
+.hero p{
+  margin-top:0.9rem;
+  margin-bottom:1.2rem; /* less gap before button */
+  color:#1f2937;
+  line-height:1.85;
+}
+
 /* Buttons */
 .btn-primary,.btn-secondary{
   display:inline-block;
@@ -104,6 +121,7 @@ p{ margin-bottom:1rem; }
   border:1px solid var(--blue);
 }
 .btn-primary:hover{ background:var(--blueHover); border-color:var(--blueHover); }
+
 .btn-secondary{
   background:transparent;
   color:var(--blue);
@@ -112,7 +130,7 @@ p{ margin-bottom:1rem; }
 }
 .btn-secondary:hover{ background:#eef2ff; border-color:#93c5fd; }
 
-/* Cards (homepage) */
+/* Cards */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -128,12 +146,14 @@ p{ margin-bottom:1rem; }
   flex-direction:column;
 }
 .card h3{ margin-bottom:0.35rem; }
+
 .tagline{
   color:var(--muted);
   margin:0.75rem 0 1.15rem;
   min-height:3.4rem;
   font-size:0.95rem;
 }
+
 .pill-list{
   list-style:none;
   display:flex;
@@ -182,8 +202,12 @@ p{ margin-bottom:1rem; }
 .chart-shot-caption{
   color:var(--muted);
   font-size:0.92rem;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.0rem;
 }
+
+/* Extra spacing helpers (for your requested section gaps) */
+.spacer-lg{ height: 1.25rem; }
+.spacer-xl{ height: 1.8rem; }
 
 /* Footer */
 .site-footer{
