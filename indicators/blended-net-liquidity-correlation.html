@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../styles.css?v=textrestore1" />
+  <link rel="stylesheet" href="../styles.css?v=layoutfix1" />
 </head>
 <body>
 
@@ -30,16 +30,16 @@
     <div class="container">
 
       <div class="indicator-nav">
-        <a href="adaptive-dual-ma-trend-ribbon.html?v=textrestore1" class="btn-secondary">← Previous</a>
+        <a href="adaptive-dual-ma-trend-ribbon.html" class="btn-secondary">← Previous</a>
         <a href="../index.html#indicators" class="btn-secondary">All indicators</a>
-        <a href="adaptive-dual-ma-trend-ribbon.html?v=textrestore1" class="btn-secondary">Next →</a>
+        <a href="adaptive-dual-ma-trend-ribbon.html" class="btn-secondary">Next →</a>
       </div>
 
       <h1>Blended Net Liquidity Correlation</h1>
 
       <p class="section-intro">
-        Many traders use liquidity-based models to understand broad macro conditions and their potential influence on price.
-        This indicator provides a transparent, configurable net-liquidity framework built from public FRED series. The indicator is free to use; the script is protected.
+        This indicator visualizes a customizable net-liquidity model built from public FRED data and calculates correlation between liquidity and price across multiple time windows.
+        The indicator is free to use; the script is protected.
       </p>
 
       <div class="doc-actions">
@@ -49,7 +49,6 @@
         </a>
       </div>
 
-      <!-- Screenshot -->
       <a class="chart-shot"
          href="https://www.tradingview.com/script/3u6UCRSH-Blended-Net-Liquidity-Correlation/"
          target="_blank" rel="noopener">
@@ -60,97 +59,41 @@
       <h2>How Traders Recreate This Without the Indicator</h2>
 
       <p>
-        Traders often approximate similar liquidity views manually using TradingView symbol math and public data series.
-        For example, you can combine multiple series using + / − / × / ÷ to build your own “net liquidity” proxy and overlay it on price.
+        Traders can approximate similar views using TradingView symbol math and public macro series. Build expressions, smooth them, and compare against price.
       </p>
 
       <ol>
-        <li>Use TradingView symbol math to combine public series into one line.</li>
-        <li>Apply smoothing to reduce noise.</li>
-        <li>Compare against price and test different offsets/timeframes.</li>
+        <li>Combine series with math (example style: WALCL − RRP − TGA).</li>
+        <li>Smooth with SMA to reduce noise.</li>
+        <li>Compare against price and test different timeframes/offsets.</li>
       </ol>
-
-      <p>
-        This indicator packages that workflow into a cleaner structure with component toggles, blending controls, smoothing options, and correlation windows.
-      </p>
 
       <h2>Overview</h2>
 
       <p>
-        Many traders use liquidity-based models to understand broad macro conditions and their potential influence on price. While institutional-grade models often rely on proprietary inputs,
-        the community frequently studies public FRED series—such as WALCL, RRP, TGA, and BTFP—to construct transparent net-liquidity frameworks that approximate capital movement within the financial system.
-      </p>
-
-      <p>
-        This script does not replicate or reverse-engineer any commercial macro indicator. Instead, it provides a fully open research framework for exploring how different liquidity components interact —
-        and how those liquidity dynamics correlate with market price across various time windows. All data comes from standard FRED series, and all calculations are fully disclosed for transparency at the behavior/input level.
+        Many traders use liquidity-based models to understand broad macro conditions and their potential influence on price. The community frequently studies public FRED series—such as WALCL, RRP, TGA, and BTFP—to construct transparent net-liquidity frameworks.
       </p>
 
       <h2>What the Script Does</h2>
 
-      <h3>1. Builds a customizable blended net-liquidity model</h3>
       <ul>
-        <li>Includes WALCL, RRP, TGA, BTFP, ΔTOTLL, and ΔM2</li>
-        <li>Allows turning each component on/off</li>
-        <li>Provides adjustable weighting for WALCL vs non-WALCL models</li>
-        <li>Smooths liquidity using optional SMA smoothing</li>
-        <li>Supports time-offsetting liquidity to study lagging effects</li>
+        <li>Builds a blended liquidity model from selectable components.</li>
+        <li>Allows toggles, smoothing, and WALCL weighting.</li>
+        <li>Runs multi-window correlation analysis and highlights the strongest window.</li>
       </ul>
 
-      <h3>2. Runs multi-period price correlations</h3>
-      <ul>
-        <li>30D, 60D, 90D, 180D</li>
-        <li>1Y, 1.5Y, 2Y</li>
-        <li>Custom length (user-defined)</li>
-        <li>Displays all correlations in a compact table</li>
-        <li>Automatically highlights the highest correlation window</li>
-      </ul>
-
-      <h3>3. Plots the blended liquidity model directly on the main chart</h3>
-      <ul>
-        <li>Uses the right-side scale</li>
-        <li>Clean visual overlay</li>
-        <li>Helps compare liquidity shifts against price structure</li>
-      </ul>
-
-      <h3>4. Maintains transparency and reproducibility</h3>
-      <ul>
-        <li>All data sourced from public FRED datasets</li>
-        <li>No proprietary formulas</li>
-        <li>Designed for research, modification, and extension</li>
-      </ul>
-
+      <div class="spacer-xl"></div>
       <h2>Why This Script Is Useful</h2>
 
       <p>
-        Traditional liquidity charts often plot only one variable at a time. This model adds clarity by:
+        Liquidity models can help frame broader market context. This tool makes it easier to explore which liquidity components matter most and whether liquidity has tracked price across different time windows.
       </p>
 
-      <ol>
-        <li>Combining multiple macro liquidity components into a unified metric</li>
-        <li>Allowing control over which components are included</li>
-        <li>Providing a smooth blended output that is easy to compare with price</li>
-        <li>Offering multi-window correlation analysis to measure relationships</li>
-        <li>Helping explore whether liquidity leads, lags, or coincides with price</li>
-      </ol>
-
-      <p>
-        This tool is ideal for macro-focused traders, swing traders, crypto/macro analysts, and anyone studying how systemic liquidity impacts market behavior.
-      </p>
-
-      <h2>Important Notes</h2>
-
-      <ul>
-        <li>FRED data updates weekly and may revise historical values</li>
-        <li>Correlation does not imply causation</li>
-        <li>Liquidity models are approximations, not definitive forecasts</li>
-        <li>Always validate settings on multiple timeframes and assets</li>
-      </ul>
-
+      <div class="spacer-xl"></div>
       <h2>Disclaimer</h2>
 
       <p>
-        This script is for research and educational purposes only. Always use proper risk management and validate all ideas before trading live.
+        Educational use only. This is not financial advice.
       </p>
 
     </div>
