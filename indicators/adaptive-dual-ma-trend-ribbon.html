@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../styles.css?v=textrestore1" />
+  <link rel="stylesheet" href="../styles.css?v=layoutfix1" />
 </head>
 <body>
 
@@ -30,9 +30,9 @@
     <div class="container">
 
       <div class="indicator-nav">
-        <a href="blended-net-liquidity-correlation.html?v=textrestore1" class="btn-secondary">← Previous</a>
+        <a href="blended-net-liquidity-correlation.html" class="btn-secondary">← Previous</a>
         <a href="../index.html#indicators" class="btn-secondary">All indicators</a>
-        <a href="blended-net-liquidity-correlation.html?v=textrestore1" class="btn-secondary">Next →</a>
+        <a href="blended-net-liquidity-correlation.html" class="btn-secondary">Next →</a>
       </div>
 
       <h1>Adaptive Dual MA Trend Ribbon Community “Larsson-Style” Presets</h1>
@@ -49,7 +49,6 @@
         </a>
       </div>
 
-      <!-- Screenshot -->
       <a class="chart-shot"
          href="https://www.tradingview.com/script/gpEGdOcF-Adaptive-Dual-MA-Trend-Ribbon-Community-Larsson-Style-Presets/"
          target="_blank" rel="noopener">
@@ -57,7 +56,6 @@
       </a>
       <p class="chart-shot-caption">Click the chart to open the indicator on TradingView.</p>
 
-      <!-- Your educational “recreate it manually” section -->
       <h2>How Traders Recreate This Without the Indicator</h2>
 
       <p>
@@ -71,109 +69,53 @@
       <ol>
         <li>Add a <strong>Smoothed Moving Average (SMMA)</strong> to your chart.</li>
         <li>Set its length to <strong>15</strong> and leave the remaining inputs at their defaults.</li>
-        <li>Add a second Smoothed Moving Average with the length set to <strong>29</strong>.</li>
-        <li>When the faster SMMA (15) moves above the slower SMMA (29), the trend bias is bullish.</li>
-        <li>When the faster SMMA (15) moves below the slower SMMA (29), the trend bias is bearish.</li>
+        <li>Add a second SMMA with the length set to <strong>29</strong>.</li>
+        <li>When the faster SMMA (15) moves above the slower SMMA (29), bias is bullish.</li>
+        <li>When the faster SMMA (15) moves below the slower SMMA (29), bias is bearish.</li>
       </ol>
 
       <p>
-        Because moving averages are lagging by nature, this approach tends to work best on <strong>higher timeframes (daily and above)</strong>
-        and during clear directional trends. It performs poorly in sideways or choppy markets, which is why many traders combine it with other indicators
-        and technical analysis for confluence.
+        Because moving averages lag, this tends to work best on <strong>daily and higher</strong> timeframes and during clear trends.
+        It performs poorly in chop, so many traders combine it with structure/volatility filters for confirmation.
       </p>
 
-      <p>
-        You don’t need to use 15 and 29 — feel free to experiment with your own settings. This indicator is provided as a free tool for exploration and convenience.
-      </p>
-
-      <!-- Your original long-form description -->
       <h2>Overview</h2>
 
       <p>
-        Many traders enjoy experimenting with dual-moving-average “trend ribbon” structures that resemble the visual style of popular tools such as the Larsson Line.
-        While the internal logic of closed-source indicators is not publicly available, the trading community often explores MA combinations like SMMA 15/29 or EMA 30/60
-        with ATR filters to study trend transitions and visualize momentum shifts.
-      </p>
-
-      <p>
-        This script does not replicate, reverse-engineer, or replace any closed-source indicator. Instead, it provides a flexible framework that lets traders build their own
-        trend-ribbon configuration inspired by the visual concept of similar tools while maintaining complete transparency around inputs and behavior.
-      </p>
-
-      <p>
-        Because all calculations use standard, well-known moving average methods, traders who enjoy experimenting with community-discussed MA presets can do so freely,
-        without relying on proprietary tools. (The indicator is free to use; the script is protected.)
+        This script does not replicate, reverse-engineer, or replace any closed-source indicator. Instead, it provides a flexible framework for exploring
+        trend-ribbon behavior using standard moving-average and ATR concepts.
       </p>
 
       <h2>What the Script Does</h2>
 
       <ul>
-        <li>Plots Fast and Slow moving averages using the method of your choice: <strong>SMMA (RMA), EMA, SMA, or WMA</strong>.</li>
-        <li>Colors the ribbon to show directional bias:
-          <ul>
-            <li><strong>Bullish</strong> when Fast MA &gt; Slow MA</li>
-            <li><strong>Bearish</strong> when Fast MA &lt; Slow MA</li>
-            <li><strong>Neutral</strong> when the difference is small (optional ATR filter)</li>
-          </ul>
-        </li>
-        <li>Supports ATR-based neutral zone filtering.</li>
-        <li>Supports optional bar coloring tied to trend state.</li>
-        <li>Works on all markets and timeframes.</li>
-        <li>Free to use on TradingView (script protected).</li>
+        <li>Plots fast/slow moving averages using SMMA (RMA), EMA, SMA, or WMA.</li>
+        <li>Colors the ribbon to show directional bias (bullish/bearish/neutral).</li>
+        <li>Optional ATR neutral zone filtering to reduce chop.</li>
+        <li>Optional bar coloring by trend state.</li>
       </ul>
 
+      <div class="spacer-xl"></div>
       <h2>Why This Script Is Useful</h2>
 
       <p>
-        Traditional moving averages identify trend direction but lack context during uncertain or low-momentum conditions. This script adds value by:
+        Traditional moving averages identify trend direction but often lack context during uncertainty. This ribbon adds structure, neutrality filtering, and flexibility for experimenting with settings.
       </p>
 
-      <ol>
-        <li>Allowing multiple smoothing techniques (SMMA/EMA/SMA/WMA)</li>
-        <li>Highlighting clearer trend transitions</li>
-        <li>Identifying low-confidence periods using ATR</li>
-        <li>Providing a visually intuitive ribbon instead of single-line signals</li>
-      </ol>
-
-      <p>
-        Suitable for swing traders, trend followers, breakout traders, and anyone who wants cleaner structure-based contextualization.
-      </p>
-
-      <h2>Popular Community MA Combinations</h2>
-
-      <ul>
-        <li><strong>SMMA 15/29</strong> → smoother structural trend flow</li>
-        <li><strong>EMA 30/60</strong> → more responsive momentum shifts</li>
-        <li><strong>EMA 10/21</strong> → intraday rhythm</li>
-        <li><strong>EMA 50/100</strong> → higher-timeframe structure</li>
-      </ul>
-
-      <p>
-        These examples are commonly used by the community — but this script does not recreate or imitate any closed-source or commercial indicator.
-      </p>
-
-      <h2>How to Use</h2>
-
-      <ol>
-        <li>Choose your preferred MA type</li>
-        <li>Adjust Fast/Slow lengths to match your timeframe</li>
-        <li>Enable ATR Neutral Zone to reduce false flips</li>
-        <li>Optionally enable bar coloring</li>
-        <li>Combine with structure, volume, or price action for decision-making</li>
-      </ol>
-
+      <div class="spacer-xl"></div>
       <h2>Important Notes</h2>
 
       <ul>
-        <li>This indicator is free to use on TradingView; the script is protected.</li>
-        <li>It does not reproduce, imitate, or reverse-engineer any closed-source logic.</li>
-        <li>All computations rely on standard MA/ATR concepts.</li>
+        <li>Free to use on TradingView; script is protected.</li>
+        <li>Moving averages lag and perform poorly in sideways markets.</li>
+        <li>Use alongside other technical tools for confluence.</li>
       </ul>
 
+      <div class="spacer-xl"></div>
       <h2>Disclaimer</h2>
 
       <p>
-        This tool is for educational and analytical purposes only. Always test parameters and use proper risk management before applying to live trading.
+        Educational use only. This is not financial advice.
       </p>
 
     </div>
