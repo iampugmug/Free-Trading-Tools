@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../styles.css?v=1001" />
+  <link rel="stylesheet" href="../styles.css?v=2025b" />
 </head>
 <body>
 
@@ -30,14 +30,16 @@
   <main class="section section-doc">
     <div class="container">
 
-      <p class="section-intro">
-        <a href="../index.html#indicators" class="btn-secondary">← Back to all indicators</a>
-      </p>
+      <div class="indicator-nav">
+        <a href="adaptive-dual-ma-trend-ribbon.html" class="btn-secondary">← Previous</a>
+        <a href="../index.html#indicators" class="btn-secondary">All indicators</a>
+        <a href="adaptive-dual-ma-trend-ribbon.html" class="btn-secondary">Next →</a>
+      </div>
 
       <h1>Blended Net Liquidity Correlation</h1>
 
       <p class="section-intro">
-        A free macro tool that builds a blended net-liquidity model from FRED data and measures how strongly that liquidity has moved with price across multiple time windows.
+        A macro tool that builds a blended net-liquidity model from FRED data and measures how strongly that liquidity has moved with price across multiple time windows.
         The indicator is <strong>free to use</strong> on TradingView; the script is protected.
       </p>
 
@@ -46,18 +48,35 @@
            target="_blank" rel="noopener" class="btn-primary">Open on TradingView</a>
       </div>
 
+      <h2>How Traders Recreate This Without the Indicator</h2>
+
+      <p>
+        At its core, this tool combines publicly available macro liquidity series into a single framework. You can approximate similar views manually in TradingView without using this indicator.
+      </p>
+
+      <p>One common approach is to use TradingView’s symbol math feature:</p>
+
+      <ol>
+        <li>Open the symbol search box.</li>
+        <li>Enter a math expression combining series (example style: WALCL − RRP − TGA). You can add/subtract/divide/multiply symbols directly.</li>
+        <li>Apply smoothing (like an SMA) to reduce noise.</li>
+        <li>Compare the result to price and test different offsets or timeframes.</li>
+      </ol>
+
+      <p>
+        This indicator packages those steps into a cleaner workflow with component toggles, weighting controls, smoothing, and correlation windows—so you can explore the same concepts faster.
+      </p>
+
       <h2>Overview</h2>
 
       <p>
-        Many traders use liquidity-based models to understand broad macro conditions and their potential influence on price. While institutional-grade models often rely on
-        proprietary inputs, the community frequently studies public FRED series—such as WALCL, RRP, TGA, and BTFP—to construct transparent net-liquidity frameworks that
-        approximate capital movement within the financial system.
+        Many traders use liquidity-based models to understand broad macro conditions and their potential influence on price. While institutional-grade models often rely on proprietary inputs,
+        the community frequently studies public FRED series—such as WALCL, RRP, TGA, and BTFP—to construct transparent net-liquidity frameworks that approximate capital movement within the financial system.
       </p>
 
       <p>
-        This script does not replicate or reverse-engineer any commercial macro indicator. Instead, it provides a flexible structure for exploring how different liquidity
-        components interact, and how those liquidity dynamics correlate with market price across various time windows. All data comes from standard FRED series, and all
-        calculations are described at a high level for transparency.
+        This script does not replicate or reverse-engineer any commercial macro indicator. Instead, it provides a flexible structure for exploring how different liquidity components interact,
+        and how those liquidity dynamics correlate with market price across various time windows.
       </p>
 
       <h2>What the Script Does</h2>
@@ -82,9 +101,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Open Indicator Lab | Blended Net Liquidity Correlation — Docs</p>
-    </div>
+    <p>© <span id="year"></span> Open Indicator Lab | Blended Net Liquidity Correlation — Docs</p>
   </footer>
 
   <script>
