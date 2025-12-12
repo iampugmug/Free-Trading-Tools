@@ -1,20 +1,16 @@
 /* ========== Reset ========== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ========== Fonts ==========
-Graphik/Publico are paid fonts. If you have a license, you can self-host them later via @font-face.
-For now we use a stack that will use Graphik/Publico if available, otherwise fall back to Inter/serif.
-*/
 :root{
   --bg: #f4f6f8;
   --surface: #ffffff;
   --text: #111827;
   --muted: #4b5563;
 
-  /* Investopedia-ish darker blue */
-  --blue: #1e40af;         /* button bg */
-  --blueHover: #1e3a8a;    /* hover */
-  --blueInk: #1d4ed8;      /* links / accents */
+  /* darker blue like Investopedia buttons */
+  --blue: #1e40af;
+  --blueHover: #1e3a8a;
+  --blueInk: #1d4ed8;
 
   --border: #e5e7eb;
   --shadow1: 0 1px 2px rgba(0,0,0,0.04);
@@ -24,38 +20,34 @@ For now we use a stack that will use Graphik/Publico if available, otherwise fal
 html, body { height: 100%; }
 
 body{
-  font-family: Graphik, Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Publico-first stack (Publico is paid; fallback will show until you upload it) */
+  font-family: Publico, "Source Serif 4", Georgia, serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.8;
   font-size: 17px;
 }
 
-/* Headlines: Publico feel (fallback to Source Serif 4) */
+/* Headings */
 h1, h2, h3{
   font-family: Publico, "Source Serif 4", Georgia, serif;
   font-weight: 700;
   letter-spacing: 0.01em;
 }
-
 h1 { font-size: clamp(2.4rem, 4vw, 3.2rem); }
 h2 { font-size: 1.6rem; margin-bottom: 0.6rem; }
-h3 { font-size: 1.15rem; }
+h3 { font-size: 1.25rem; } /* slightly larger in cards */
 
 p { margin-bottom: 1rem; }
 
-/* ========== Layout ==========
-We keep a consistent “content width” like Investopedia.
-*/
+/* Layout */
 .container{
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.75rem;
 }
 
-.section{
-  padding: 3.75rem 0;
-}
+.section{ padding: 3.75rem 0; }
 
 .section-intro{
   color: var(--muted);
@@ -63,19 +55,19 @@ We keep a consistent “content width” like Investopedia.
   max-width: 1000px;
 }
 
-/* ========== Header (back to original position) ========== */
+/* Header (logo left, nav right) */
 .site-header{
   position: sticky;
   top: 0;
   z-index: 50;
   background: var(--surface);
   border-bottom: 1px solid var(--border);
-  box-shadow: var(--shadow1), 0 8px 18px rgba(0,0,0,0.08); /* slightly thicker */
+  box-shadow: var(--shadow1), 0 8px 18px rgba(0,0,0,0.08);
 }
 
 .site-header .container{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* left / right */
   align-items: center;
   padding: 0.95rem 0;
 }
@@ -83,7 +75,7 @@ We keep a consistent “content width” like Investopedia.
 .logo{
   font-weight: 800;
   letter-spacing: 0.09em;
-  font-size: 1.18rem; /* slightly bigger */
+  font-size: 1.22rem; /* slightly bigger */
   text-transform: uppercase;
 }
 
@@ -92,52 +84,48 @@ We keep a consistent “content width” like Investopedia.
   text-decoration: none;
 }
 
-.logo a:hover{
-  color: var(--blueInk);
-}
+.logo a:hover{ color: var(--blueInk); }
 
+.nav{
+  display: flex;
+  justify-content: flex-end; /* keep nav right */
+  align-items: center;
+}
 .nav a{
   margin-left: 1.75rem;
   text-decoration: none;
   font-size: 0.95rem;
   color: var(--muted);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif; /* nav in clean sans */
 }
+.nav a:hover{ color: var(--text); }
 
-.nav a:hover{
-  color: var(--text);
-}
-
-/* ========== “Hollow paper shelf” spacer under header ========== */
+/* Hollow shelf under header (half height) */
 .top-shelf{
-  height: 26px;
+  height: 13px; /* half */
   background: linear-gradient(#f7f8fb, #f0f2f6);
   border-bottom: 1px solid var(--border);
   box-shadow: inset 0 -1px 0 rgba(0,0,0,0.02);
 }
 
-/* ========== Hero ==========
-We keep hero content centered but not squished.
-*/
+/* Hero */
 .hero{
   background: linear-gradient(90deg, #e7f1ff, #f1f5ff);
   border-bottom: 1px solid var(--border);
   padding: 3.6rem 0 3.1rem;
 }
 
-.hero-inner{
-  max-width: 920px;
-}
+.hero-inner{ max-width: 920px; }
 
 .hero p{
   margin-top: 1rem;
   margin-bottom: 2.2rem;
   color: #1f2937;
   line-height: 1.9;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif; /* body paragraph in clean sans for readability */
 }
 
-/* ========== Buttons ==========
-Make buttons “pill” sized (not full width).
-*/
+/* Buttons */
 .btn-primary, .btn-secondary{
   display: inline-block;
   width: auto;
@@ -146,7 +134,7 @@ Make buttons “pill” sized (not full width).
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
-  font-family: Graphik, Inter, system-ui, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif; /* buttons in sans */
 }
 
 .btn-primary{
@@ -154,7 +142,6 @@ Make buttons “pill” sized (not full width).
   color: #fff;
   border: 1px solid var(--blue);
 }
-
 .btn-primary:hover{
   background: var(--blueHover);
   border-color: var(--blueHover);
@@ -166,15 +153,12 @@ Make buttons “pill” sized (not full width).
   border: 1px solid #c7d2fe;
   padding: 0.6rem 1.45rem;
 }
-
 .btn-secondary:hover{
   background: #eef2ff;
   border-color: #93c5fd;
 }
 
-/* ========== Cards ==========
-Cards align like “paper cards” on Investopedia.
-*/
+/* Cards */
 .cards{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -191,10 +175,14 @@ Cards align like “paper cards” on Investopedia.
   flex-direction: column;
 }
 
+.card h3{ margin-bottom: 0.35rem; }
+
 .tagline{
   color: var(--muted);
   margin: 0.75rem 0 1.2rem;
   min-height: 3.6rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif; /* card body in sans */
+  font-size: 0.95rem;
 }
 
 .pill-list{
@@ -212,20 +200,15 @@ Cards align like “paper cards” on Investopedia.
   font-size: 0.75rem;
   background: #f9fafb;
   color: #374151;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-.card-actions{
-  margin-top: auto;
-}
+.card-actions{ margin-top: auto; }
 
-/* ========== Docs pages ==========
-Make Dual MA match the liquidity page width (no squished narrow column).
-*/
+/* Docs pages */
 .section-doc p,
 .section-doc ul,
-.section-doc ol{
-  max-width: 1000px;
-}
+.section-doc ol{ max-width: 1000px; }
 
 .section-doc h2{
   margin-top: 2.5rem;
@@ -238,11 +221,6 @@ Make Dual MA match the liquidity page width (no squished narrow column).
   margin-bottom: 1.25rem;
 }
 
-/* Extra spacing after lists so it’s not cramped */
-.section-doc ol{ padding-bottom: 0.25rem; }
-
-/* ========== Footer ==========
-*/
 .site-footer{
   background: var(--surface);
   border-top: 1px solid var(--border);
@@ -250,10 +228,10 @@ Make Dual MA match the liquidity page width (no squished narrow column).
   text-align: center;
   color: #6b7280;
   font-size: 0.9rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-/* ========== Mobile ==========
-*/
+/* Mobile */
 @media (max-width: 768px){
   .nav{ display: none; }
   .container{ padding: 0 1.25rem; }
