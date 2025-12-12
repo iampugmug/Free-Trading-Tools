@@ -21,7 +21,8 @@
   --blueHover:#1e3a8a;
   --blueInk:#1d4ed8;
 
-  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 18px rgba(0,0,0,0.08);
+  --shadow: 0 1px 2px rgba(0,0,0,0.04),
+            0 8px 18px rgba(0,0,0,0.08);
 }
 
 /* =========================
@@ -206,7 +207,7 @@ p{
 }
 
 /* =========================
-   CARDS (HOME)
+   CARDS
 ========================= */
 .cards{
   display:grid;
@@ -280,7 +281,7 @@ p{
   overflow:hidden;
   background:#fff;
   box-shadow:0 10px 24px rgba(0,0,0,0.06);
-  margin:0.75rem 0 0.8rem;
+  margin:1.4rem 0 1.6rem;
 }
 
 .chart-shot img{
@@ -296,9 +297,11 @@ p{
 }
 
 /* =========================
-   CONTENT RHYTHM (IMPORTANT)
-   Makes spacing uniform like Word
+   DOCUMENT RHYTHM (CRITICAL)
+   Ensures all section headers align evenly
 ========================= */
+
+/* Remove unpredictable top margins */
 .section-doc h2,
 .section-doc p,
 .section-doc ul,
@@ -306,27 +309,37 @@ p{
   margin-top:0;
 }
 
-.section-doc h2{
-  margin-top:2.2rem;
-  margin-bottom:0.8rem;
-}
-
-.section-doc h2:first-of-type{
-  margin-top:1.4rem;
-}
-
+/* Uniform spacing between paragraphs */
 .section-doc p{
-  margin-bottom:1.1rem;
+  margin-bottom:16px;
 }
 
+/* Uniform spacing after lists */
 .section-doc ul,
 .section-doc ol{
-  margin-bottom:1.2rem;
-  padding-left:1.4rem;
+  margin-bottom:18px;
+  padding-left:22px;
 }
 
+/* List item spacing */
 .section-doc li{
-  margin-bottom:0.45rem;
+  margin-bottom:8px;
+}
+
+.section-doc li:last-child{
+  margin-bottom:0;
+}
+
+/* EVERY section header starts the same distance */
+.section-doc h2{
+  margin-top:34px;
+  margin-bottom:12px;
+  line-height:1.25;
+}
+
+/* First section shouldn't be pushed down */
+.section-doc h2:first-of-type{
+  margin-top:18px;
 }
 
 /* =========================
