@@ -1,185 +1,263 @@
 /* ========== Reset ========== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ========== Base Typography ========== */
-body {
-  font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f4f6f8;
-  color: #111827;
+/* ========== Fonts ==========
+Graphik/Publico are paid fonts. If you have a license, you can self-host them later via @font-face.
+For now we use a stack that will use Graphik/Publico if available, otherwise fall back to Inter/serif.
+*/
+:root{
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #4b5563;
+
+  /* Investopedia-ish darker blue */
+  --blue: #1e40af;         /* button bg */
+  --blueHover: #1e3a8a;    /* hover */
+  --blueInk: #1d4ed8;      /* links / accents */
+
+  --border: #e5e7eb;
+  --shadow1: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow2: 0 10px 24px rgba(0,0,0,0.07);
+}
+
+html, body { height: 100%; }
+
+body{
+  font-family: Graphik, Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.8;
   font-size: 17px;
 }
 
-h1, h2, h3 { font-weight: 700; letter-spacing: 0.01em; }
+/* Headlines: Publico feel (fallback to Source Serif 4) */
+h1, h2, h3{
+  font-family: Publico, "Source Serif 4", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
 h1 { font-size: clamp(2.4rem, 4vw, 3.2rem); }
 h2 { font-size: 1.6rem; margin-bottom: 0.6rem; }
 h3 { font-size: 1.15rem; }
 
-/* ========== Global content width helper ========== */
-.container {
+p { margin-bottom: 1rem; }
+
+/* ========== Layout ==========
+We keep a consistent “content width” like Investopedia.
+*/
+.container{
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.75rem;
 }
 
-/* ========== Header ========== */
-.site-header {
+.section{
+  padding: 3.75rem 0;
+}
+
+.section-intro{
+  color: var(--muted);
+  margin-bottom: 2rem;
+  max-width: 1000px;
+}
+
+/* ========== Header (back to original position) ========== */
+.site-header{
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 6px 16px rgba(0,0,0,0.08); /* slightly thicker */
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow1), 0 8px 18px rgba(0,0,0,0.08); /* slightly thicker */
 }
 
-.site-header .container {
+.site-header .container{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.9rem 0;
+  padding: 0.95rem 0;
 }
 
-.logo {
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  font-size: 1.05rem;
+.logo{
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  font-size: 1.18rem; /* slightly bigger */
   text-transform: uppercase;
 }
 
-.logo a {
-  color: #111827;
+.logo a{
+  color: var(--text);
   text-decoration: none;
 }
 
-.logo a:hover { color: #1d4ed8; }
+.logo a:hover{
+  color: var(--blueInk);
+}
 
-.nav a {
+.nav a{
   margin-left: 1.75rem;
   text-decoration: none;
   font-size: 0.95rem;
-  color: #4b5563;
+  color: var(--muted);
 }
 
-.nav a:hover { color: #111827; }
-
-/* ========== Sections ========== */
-.section { padding: 3.75rem 0; }
-
-.section p { margin-bottom: 1rem; }
-
-.section-intro {
-  color: #374151;
-  margin-bottom: 2rem;
-  max-width: 1000px; /* make intros wide like About */
+.nav a:hover{
+  color: var(--text);
 }
 
-/* ========== Hero ========== */
-.hero {
+/* ========== “Hollow paper shelf” spacer under header ========== */
+.top-shelf{
+  height: 26px;
+  background: linear-gradient(#f7f8fb, #f0f2f6);
+  border-bottom: 1px solid var(--border);
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.02);
+}
+
+/* ========== Hero ==========
+We keep hero content centered but not squished.
+*/
+.hero{
   background: linear-gradient(90deg, #e7f1ff, #f1f5ff);
-  border-bottom: 1px solid #e5e7eb;
-  padding: 4rem 0 3.25rem;
+  border-bottom: 1px solid var(--border);
+  padding: 3.6rem 0 3.1rem;
 }
 
-.hero-inner { max-width: 900px; } /* wider so it doesn't feel cramped */
+.hero-inner{
+  max-width: 920px;
+}
 
-.hero p {
+.hero p{
   margin-top: 1rem;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.2rem;
   color: #1f2937;
   line-height: 1.9;
 }
 
-/* ========== Buttons ========== */
-.btn-primary, .btn-secondary {
-  display: inline-block;          /* prevents full-width stretching */
+/* ========== Buttons ==========
+Make buttons “pill” sized (not full width).
+*/
+.btn-primary, .btn-secondary{
+  display: inline-block;
   width: auto;
-  padding: 0.7rem 1.5rem;
+  padding: 0.7rem 1.55rem;
   border-radius: 999px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
+  font-family: Graphik, Inter, system-ui, sans-serif;
 }
 
-.btn-primary {
-  background: #2563eb;
-  color: #ffffff;
-  border: 1px solid #1d4ed8;
+.btn-primary{
+  background: var(--blue);
+  color: #fff;
+  border: 1px solid var(--blue);
 }
 
-.btn-primary:hover { background: #1d4ed8; }
+.btn-primary:hover{
+  background: var(--blueHover);
+  border-color: var(--blueHover);
+}
 
-.btn-secondary {
+.btn-secondary{
   background: transparent;
-  color: #2563eb;
+  color: var(--blue);
   border: 1px solid #c7d2fe;
-  padding: 0.6rem 1.4rem;
+  padding: 0.6rem 1.45rem;
 }
 
-.btn-secondary:hover { background: #eef3ff; }
+.btn-secondary:hover{
+  background: #eef2ff;
+  border-color: #93c5fd;
+}
 
-/* ========== Cards ========== */
-.cards {
+/* ========== Cards ==========
+Cards align like “paper cards” on Investopedia.
+*/
+.cards{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 }
 
-.card {
-  background: #ffffff;
+.card{
+  background: var(--surface);
   border-radius: 1rem;
-  padding: 1.75rem;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+  padding: 1.8rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow2);
   display: flex;
   flex-direction: column;
 }
 
-.tagline {
-  color: #4b5563;
+.tagline{
+  color: var(--muted);
   margin: 0.75rem 0 1.2rem;
   min-height: 3.6rem;
 }
 
-.pill-list {
+.pill-list{
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.4rem;
 }
 
-.pill-list li {
+.pill-list li{
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   font-size: 0.75rem;
   background: #f9fafb;
+  color: #374151;
 }
 
-/* push only the button container to bottom, not every <a> */
-.card .card-actions { margin-top: auto; }
+.card-actions{
+  margin-top: auto;
+}
 
-/* ========== Docs pages ========== */
-.section-doc p { max-width: 1000px; }      /* wider paragraphs like your Liquidity page */
-.section-doc ul, .section-doc ol { max-width: 1000px; }
+/* ========== Docs pages ==========
+Make Dual MA match the liquidity page width (no squished narrow column).
+*/
+.section-doc p,
+.section-doc ul,
+.section-doc ol{
+  max-width: 1000px;
+}
 
-.section-doc h2 { margin-top: 2.5rem; margin-bottom: 0.75rem; }
+.section-doc h2{
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
 
-/* ========== Footer ========== */
-.site-footer {
-  background: #ffffff;
-  border-top: 1px solid #e5e7eb;
+.section-doc ul,
+.section-doc ol{
+  margin-left: 1.2rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Extra spacing after lists so it’s not cramped */
+.section-doc ol{ padding-bottom: 0.25rem; }
+
+/* ========== Footer ==========
+*/
+.site-footer{
+  background: var(--surface);
+  border-top: 1px solid var(--border);
   padding: 1.75rem 0;
   text-align: center;
   color: #6b7280;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
-/* ========== Mobile ========== */
-@media (max-width: 768px) {
-  .nav { display: none; }
-  .container { padding: 0 1.25rem; }
-  .hero { padding: 3rem 0 2.75rem; }
-  .section { padding: 2.75rem 0; }
-  .cards { grid-template-columns: 1fr; }
+/* ========== Mobile ==========
+*/
+@media (max-width: 768px){
+  .nav{ display: none; }
+  .container{ padding: 0 1.25rem; }
+  .hero{ padding: 3rem 0 2.7rem; }
+  .section{ padding: 2.75rem 0; }
+  .cards{ grid-template-columns: 1fr; }
 }
