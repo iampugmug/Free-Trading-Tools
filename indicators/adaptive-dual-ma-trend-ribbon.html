@@ -4,14 +4,21 @@
   <meta charset="UTF-8" />
   <title>Adaptive Dual MA Trend Ribbon Community “Larsson-Style” Presets – Open Indicator Lab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Investopedia-style font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
-    <div class="logo"><a href="../index.html">Open Indicator Lab</a></div>
+    <div class="logo">
+      <a href="../index.html">Open Indicator Lab</a>
+    </div>
     <nav class="nav">
       <a href="../index.html#hero">Home</a>
       <a href="../index.html#indicators">Indicators</a>
@@ -19,51 +26,94 @@
     </nav>
   </header>
 
+  <!-- CONTENT -->
   <main class="section section-doc">
+
     <p class="section-intro">
       <a href="../index.html#indicators" class="btn-secondary">← Back to all indicators</a>
     </p>
 
     <h1>Adaptive Dual MA Trend Ribbon Community “Larsson-Style” Presets</h1>
-    <p class="section-intro">
-      Dual-moving-average “trend ribbon” for TradingView that lets you experiment with SMMA/EMA/SMA/WMA 
-      pairs and ATR-based neutral zones, inspired by community Larsson-style ribbons. The indicator is 
-      free to use; the code itself is published as protected on TradingView.
+
+    <p class="section-intro body-text">
+      A dual-moving-average “trend ribbon” for TradingView that allows traders to experiment with 
+      SMMA / EMA / SMA / WMA pairs and optional ATR-based neutral zones.  
+      The indicator is <strong>free to use</strong> on TradingView; the source code itself is published as protected.
     </p>
 
     <div class="doc-actions">
-      <a href="https://www.tradingview.com/script/gpEGdOcF-Adaptive-Dual-MA-Trend-Ribbon-Community-Larsson-Style-Presets/"
-         target="_blank" rel="noopener" class="btn-primary">
+      <a
+        href="https://www.tradingview.com/script/gpEGdOcF-Adaptive-Dual-MA-Trend-Ribbon-Community-Larsson-Style-Presets/"
+        target="_blank"
+        rel="noopener"
+        class="btn-primary"
+      >
         Open on TradingView
       </a>
     </div>
 
-    <!-- OPTIONAL: TradingView embed chart.
-         On TradingView, use the "Share" / "Embed" option to copy the iframe snippet,
-         then paste it inside the div below. -->
+    <!-- OPTIONAL TRADINGVIEW EMBED -->
     <!--
     <div class="tv-embed">
-      [PASTE YOUR TRADINGVIEW EMBED <iframe> HERE]
+      Paste TradingView iframe embed code here if you decide to include it later.
     </div>
     -->
 
-    <h2>Overview</h2>
-    <p>
-      Many traders enjoy experimenting with dual-moving-average “trend ribbon” structures that resemble 
-      the visual style of popular tools such as the Larsson Line. While the internal logic of closed-source 
-      indicators is not publicly available, the trading community often explores MA combinations like 
-      SMMA 15/29 or EMA 30/60 with ATR filters to study trend transitions and visualize momentum shifts.
-    </p>
-    <p>
-      This script does <strong>not</strong> replicate, reverse-engineer, or replace any closed-source indicator. 
-      Instead, it provides a flexible framework that lets traders build their own trend-ribbon configuration 
-      inspired by similar visual concepts while maintaining full transparency on inputs and behavior. 
-      Because the calculations rely only on standard moving-average and ATR methods, you can experiment 
-      freely with community-discussed presets without relying on proprietary tools.
+    <!-- HOW TO RECREATE -->
+    <h2>How Traders Recreate This Without the Indicator</h2>
+
+    <p class="body-text">
+      At its core, many so-called “Larsson-style” trend ribbons are based on a very simple idea:
+      plotting two smoothed moving averages and observing how they interact over time.
     </p>
 
+    <p class="body-text">
+      If you want to recreate a similar structure manually in TradingView—without using this indicator—you can do the following:
+    </p>
+
+    <ol class="body-text">
+      <li>Add a <strong>Smoothed Moving Average (SMMA)</strong> to your chart.</li>
+      <li>Set its length to <strong>15</strong> and leave the remaining inputs at their defaults.</li>
+      <li>Add a second Smoothed Moving Average with the length set to <strong>29</strong>.</li>
+      <li>When the faster SMMA (15) moves above the slower SMMA (29), the trend bias is bullish.</li>
+      <li>When the faster SMMA (15) moves below the slower SMMA (29), the trend bias is bearish.</li>
+    </ol>
+
+    <p class="body-text">
+      Because moving averages are lagging by nature, this approach tends to work best on
+      <strong>higher timeframes (daily and above)</strong> and during clear directional trends.
+      It performs poorly in sideways or choppy markets, which is why many traders combine it
+      with volatility filters, market structure, or other forms of confirmation.
+    </p>
+
+    <p class="body-text">
+      The indicator provided here simply packages this concept into a cleaner visual ribbon,
+      adds optional ATR-based neutral zones, and makes it easier to experiment with different
+      moving-average types and lengths. You are free to explore and adjust these parameters
+      as much as you like.
+    </p>
+
+    <!-- OVERVIEW -->
+    <h2>Overview</h2>
+
+    <p class="body-text">
+      Many traders enjoy experimenting with dual-moving-average “trend ribbon” structures that resemble
+      the visual style of popular tools such as the Larsson Line. While the internal logic of closed-source
+      indicators is not publicly available, the trading community has long explored MA combinations like
+      SMMA 15/29 or EMA 30/60 with ATR filters to study trend transitions and visualize momentum shifts.
+    </p>
+
+    <p class="body-text">
+      This indicator does <strong>not</strong> replicate, reverse-engineer, or replace any closed-source tool.
+      Instead, it provides a flexible framework that allows traders to build their own trend-ribbon
+      configuration inspired by similar visual concepts, while remaining transparent about inputs
+      and behavior.
+    </p>
+
+    <!-- WHAT IT DOES -->
     <h2>What the Script Does</h2>
-    <ul>
+
+    <ul class="body-text">
       <li>Plots Fast and Slow moving averages using SMMA (RMA), EMA, SMA, or WMA.</li>
       <li>Colors the ribbon to show directional bias:
         <ul>
@@ -78,62 +128,79 @@
       <li>Free public indicator; code is protected on TradingView.</li>
     </ul>
 
+    <!-- WHY USEFUL -->
     <h2>Why This Script Is Useful</h2>
-    <p>
-      Traditional moving averages identify trend direction but often lack context during uncertain 
-      or low-momentum conditions. This ribbon adds structure in a few ways:
+
+    <p class="body-text">
+      Traditional moving averages identify trend direction but often lack context during uncertain
+      or low-momentum conditions. This ribbon adds structure in several ways:
     </p>
-    <ol>
-      <li>Allows multiple smoothing techniques (SMMA/EMA/SMA/WMA).</li>
+
+    <ol class="body-text">
+      <li>Allows multiple smoothing techniques (SMMA / EMA / SMA / WMA).</li>
       <li>Highlights clearer transitions between bullish, bearish, and neutral phases.</li>
       <li>Uses ATR to flag low-confidence, sideways periods.</li>
       <li>Provides a visually intuitive band instead of a single line.</li>
     </ol>
-    <p>
-      It is well-suited for swing traders, trend followers, and breakout traders who want a clean 
-      context filter to sit alongside their existing entry and risk rules.
+
+    <p class="body-text">
+      It is well-suited for swing traders, trend followers, and breakout traders who want a clean
+      context filter to complement—not replace—their existing entry and risk rules.
     </p>
 
-    <h2>Popular MA Combinations</h2>
-    <ul>
+    <!-- COMMON PRESETS -->
+    <h2>Common Community Presets</h2>
+
+    <ul class="body-text">
       <li><strong>SMMA 15 / 29</strong> – smoother structural trend flow.</li>
       <li><strong>EMA 30 / 60</strong> – more responsive momentum shifts.</li>
       <li><strong>EMA 10 / 21</strong> – intraday rhythm.</li>
       <li><strong>EMA 50 / 100</strong> – higher-timeframe structure.</li>
     </ul>
-    <p>
-      These examples are commonly discussed in the community, but this script does not recreate or imitate 
-      any closed-source or commercial indicator.
+
+    <p class="body-text">
+      These settings are commonly discussed within the trading community, but the indicator
+      does not attempt to recreate or imitate any closed-source or commercial product.
     </p>
 
+    <!-- HOW TO USE -->
     <h2>How to Use</h2>
-    <ol>
-      <li>Choose your preferred MA type and lengths based on your timeframe.</li>
+
+    <ol class="body-text">
+      <li>Choose your preferred moving-average type and lengths based on timeframe.</li>
       <li>Enable the ATR Neutral Zone if you want fewer noisy flips.</li>
-      <li>Optionally color bars by trend for faster visual reads.</li>
-      <li>Combine with structure (support/resistance), volume, and your own entry triggers.</li>
+      <li>Optionally color bars by trend for faster visual interpretation.</li>
+      <li>Combine with structure, volume, and your own entry logic for confluence.</li>
     </ol>
 
+    <!-- NOTES -->
     <h2>Important Notes</h2>
-    <ul>
-      <li>The indicator is free to use on TradingView; the source code is protected.</li>
+
+    <ul class="body-text">
+      <li>The indicator is free to use; the source code is published as protected.</li>
       <li>It does not reproduce, imitate, or reverse-engineer any closed-source logic.</li>
-      <li>All computations rely on standard moving-average and ATR concepts.</li>
+      <li>All calculations rely on standard moving-average and ATR concepts.</li>
     </ul>
 
+    <!-- DISCLAIMER -->
     <h2>Disclaimer</h2>
-    <p>
-      This tool is for educational and analytical purposes only. Always test parameters and use proper 
-      risk management before applying any idea to live trading.
+
+    <p class="body-text">
+      This indicator is provided for educational and analytical purposes only.
+      Always test settings thoroughly and apply proper risk management before
+      using any indicator in live trading.
     </p>
+
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <p>© <span id="year"></span> Open Indicator Lab – Adaptive Trend Ribbon Docs</p>
+    <p>© <span id="year"></span> Open Indicator Lab – Adaptive Trend Ribbon</p>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
