@@ -1,32 +1,16 @@
 /* =========================
-   RESET & VARIABLES
+   RESET & BASE
 ========================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-:root{
-  --bg:#f4f6f8;
-  --surface:#ffffff;
-  --text:#111827;
-  --muted:#4b5563;
-  --border:#e5e7eb;
-
-  --blue:#1e40af;
-  --blueHover:#1e3a8a;
-
-  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 18px rgba(0,0,0,0.08);
-}
-
-/* =========================
-   BASE / SAFARI HARDENING
-========================= */
 html, body {
   min-height: 100%;
 }
 
 body{
   font-family: "Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background: #f4f6f8;
+  color: #111827;
   line-height: 1.75;
   font-size: 17px;
   overflow-x: hidden;
@@ -61,10 +45,12 @@ p{ margin-bottom: 1rem; }
   padding: 0 1.75rem;
 }
 
-.section{ padding: 3.5rem 0; }
+.section{
+  padding: 3.5rem 0;
+}
 
 .section-intro{
-  color: var(--muted);
+  color: #4b5563;
   margin-bottom: 2rem;
   max-width: 1000px;
 }
@@ -76,9 +62,9 @@ p{ margin-bottom: 1rem; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 18px rgba(0,0,0,0.08);
   -webkit-transform: translateZ(0);
 }
 
@@ -97,7 +83,7 @@ p{ margin-bottom: 1rem; }
 }
 
 .logo a{
-  color: var(--text);
+  color: #111827;
   text-decoration: none;
 }
 
@@ -109,7 +95,7 @@ p{ margin-bottom: 1rem; }
   margin-left: 1.5rem;
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--muted);
+  color: #4b5563;
   text-decoration: none;
 }
 
@@ -119,7 +105,7 @@ p{ margin-bottom: 1rem; }
 .top-shelf{
   height: 10px;
   background: linear-gradient(#f7f8fb,#f0f2f6);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #e5e7eb;
 }
 
 /* =========================
@@ -134,19 +120,19 @@ p{ margin-bottom: 1rem; }
 }
 
 .btn-primary{
-  background:var(--blue);
+  background:#1e40af;
   color:#fff;
-  border:1px solid var(--blue);
+  border:1px solid #1e40af;
 }
 
 .btn-secondary{
   background:transparent;
-  color:var(--blue);
+  color:#1e40af;
   border:1px solid #c7d2fe;
 }
 
 /* =========================
-   DOC NAV
+   INDICATOR NAV
 ========================= */
 .indicator-nav{
   display:flex;
@@ -161,21 +147,22 @@ p{ margin-bottom: 1rem; }
   margin: 1.5rem 0 2.5rem;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid var(--border);
-  background: #fff;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
 }
 
 .tv-embed iframe{
   width: 100%;
   height: 520px;
-  border: none;
+  border: 0;
+  display: block;
 }
 
 /* =========================
    FOOTER
 ========================= */
 .site-footer{
-  border-top:1px solid var(--border);
+  border-top:1px solid #e5e7eb;
   padding:0.9rem 0;
   font-size:0.85rem;
   color:#6b7280;
