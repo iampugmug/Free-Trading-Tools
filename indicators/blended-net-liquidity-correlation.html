@@ -1,84 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Blended Net Liquidity Correlation – Docs | Open Indicator Lab</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Blended Net Liquidity Correlation – Docs | Open Indicator Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../styles.css?v=tvfinal">
+  <link rel="stylesheet" href="../styles.css?v=shots1" />
 </head>
-
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <div class="logo"><a href="../index.html">Open Indicator Lab</a></div>
-    <nav class="nav">
-      <a href="../index.html#hero">Home</a>
-      <a href="../index.html#indicators">Indicators</a>
-      <a href="../index.html#about">About</a>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo"><a href="../index.html">Open Indicator Lab</a></div>
+      <nav class="nav">
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#indicators">Indicators</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="top-shelf"></div>
+  <div class="top-shelf"></div>
 
-<main class="section">
-<div class="container">
+  <main class="section section-doc">
+    <div class="container">
 
-<div class="indicator-nav">
-  <a href="adaptive-dual-ma-trend-ribbon.html?v=tvfinal" class="btn-secondary">← Previous</a>
-  <a href="../index.html#indicators" class="btn-secondary">All indicators</a>
-  <a href="adaptive-dual-ma-trend-ribbon.html?v=tvfinal" class="btn-secondary">Next →</a>
-</div>
+      <div class="indicator-nav">
+        <a href="adaptive-dual-ma-trend-ribbon.html?v=shots1" class="btn-secondary">← Previous</a>
+        <a href="../index.html#indicators" class="btn-secondary">All indicators</a>
+        <a href="adaptive-dual-ma-trend-ribbon.html?v=shots1" class="btn-secondary">Next →</a>
+      </div>
 
-<h1>Blended Net Liquidity Correlation</h1>
+      <h1>Blended Net Liquidity Correlation</h1>
 
-<p class="section-intro">
-Macro liquidity model combining public FRED series with multi-window price correlation.
-</p>
+      <p class="section-intro">
+        This indicator visualizes a customizable net liquidity model built from public FRED data and measures correlation between liquidity and price across multiple time windows.
+        The indicator is free to use; the script is protected.
+      </p>
 
-<div class="doc-actions">
-  <a class="btn-primary" target="_blank"
-     href="https://www.tradingview.com/script/3u6UCRSH-Blended-Net-Liquidity-Correlation/">
-    Open on TradingView
-  </a>
-</div>
+      <div class="doc-actions">
+        <a class="btn-primary" target="_blank" rel="noopener"
+           href="https://www.tradingview.com/script/3u6UCRSH-Blended-Net-Liquidity-Correlation/">
+          Open on TradingView
+        </a>
+      </div>
 
-<div class="tv-embed">
-  <iframe
-    loading="lazy"
-    allowfullscreen
-    src="https://www.tradingview.com/widgetembed/?symbol=BITSTAMP%3ABTCUSD&interval=W&theme=light&style=1&locale=en&hide_side_toolbar=true&enable_publishing=false&allow_symbol_change=true&studies=%5B%22USER%3A3u6UCRSH%22%5D">
-  </iframe>
-</div>
+      <a class="chart-shot"
+         href="https://www.tradingview.com/script/3u6UCRSH-Blended-Net-Liquidity-Correlation/"
+         target="_blank" rel="noopener">
+        <img src="../assets/blended-net-liquidity.png" alt="Blended Net Liquidity Correlation example chart">
+      </a>
+      <p class="chart-shot-caption">Click the chart to open the indicator on TradingView.</p>
 
-<h2>How Traders Recreate This Without the Indicator</h2>
+      <h2>How Traders Recreate This Without the Indicator</h2>
 
-<p>
-Use TradingView symbol math to combine WALCL, RRP, and TGA series, then smooth and compare against price.
-</p>
+      <p>
+        You can approximate similar views manually in TradingView using symbol math with public macro series.
+        Traders often build expressions and smooth them to study broad liquidity direction.
+      </p>
 
-<h2>Disclaimer</h2>
+      <ol>
+        <li>Use TradingView symbol math to add/subtract series (example style: WALCL − RRP − TGA).</li>
+        <li>Apply smoothing (SMA) to reduce noise.</li>
+        <li>Compare against price and test different timeframes/offsets.</li>
+      </ol>
 
-<p>
-Educational use only. No financial advice.
-</p>
+      <h2>What the Script Does</h2>
 
-</div>
-</main>
+      <ul>
+        <li>Builds a blended net liquidity model from components like WALCL, RRP, TGA, BTFP, lending, and M2.</li>
+        <li>Allows turning components on/off and weighting models.</li>
+        <li>Computes correlation vs price across multiple windows and highlights the highest.</li>
+        <li>Plots liquidity against price for macro context.</li>
+      </ul>
 
-<footer class="site-footer">
-<p>© <span id="year"></span> Open Indicator Lab | Blended Net Liquidity Correlation — Docs</p>
-</footer>
+      <h2>Disclaimer</h2>
+      <p>
+        Educational use only. This is not financial advice.
+      </p>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Open Indicator Lab | Blended Net Liquidity Correlation — Docs</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
