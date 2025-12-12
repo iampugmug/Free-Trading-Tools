@@ -10,6 +10,7 @@
 
   --blue:#1e40af;
   --blueHover:#1e3a8a;
+  --blueInk:#1d4ed8;
 
   --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 18px rgba(0,0,0,0.08);
 }
@@ -30,7 +31,7 @@ h1,h2,h3{
 
 h1{ font-size:clamp(2.3rem, 4vw, 3.1rem); }
 h2{ font-size:1.55rem; margin-bottom:0.6rem; }
-h3{ font-size:1.22rem; } /* slightly larger titles in cards */
+h3{ font-size:1.22rem; }
 
 p{ margin-bottom:1rem; }
 
@@ -48,7 +49,7 @@ p{ margin-bottom:1rem; }
   max-width:1000px;
 }
 
-/* Header (same for all pages) */
+/* Header */
 .site-header{
   position:sticky;
   top:0;
@@ -58,12 +59,11 @@ p{ margin-bottom:1rem; }
   box-shadow:var(--shadow);
 }
 
-/* Edge-to-edge header inner */
 .header-inner{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:0.45rem 1.75rem; /* shorter header */
+  padding:0.45rem 1.75rem; /* compact header */
 }
 
 .logo{
@@ -77,8 +77,7 @@ p{ margin-bottom:1rem; }
   color:var(--text);
   text-decoration:none;
 }
-
-.logo a:hover{ color:#1d4ed8; }
+.logo a:hover{ color:var(--blueInk); }
 
 .nav{
   display:flex;
@@ -95,7 +94,7 @@ p{ margin-bottom:1rem; }
 }
 .nav a:hover{ color:var(--text); }
 
-/* small shelf */
+/* Shelf */
 .top-shelf{
   height:10px;
   background:linear-gradient(#f7f8fb,#f0f2f6);
@@ -189,6 +188,8 @@ p{ margin-bottom:1rem; }
 .card-actions{ margin-top:auto; }
 
 /* Docs pages */
+.section-doc { overflow: visible; } /* prevents clipping issues */
+
 .section-doc p,
 .section-doc ul,
 .section-doc ol{ max-width:1000px; }
@@ -204,27 +205,33 @@ p{ margin-bottom:1rem; }
   margin-bottom:1.15rem;
 }
 
-/* Add spacing below the TradingView button area */
+/* Space after TradingView button */
 .doc-actions{
   margin: 0.75rem 0 1.35rem;
 }
 
-/* Footer (shorter, matches header feel) */
-.site-footer{
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 0.9rem 0;              /* taller so text is vertically centered */
-  text-align: center;
-  color: #6b7280;
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Indicator nav buttons */
+.indicator-nav{
+  display:flex;
+  gap:0.6rem;
+  flex-wrap:wrap;
+  margin-bottom:2rem;
 }
 
-.site-footer p{
-  margin: 0;                      /* prevents text from sitting too high */
+/* Footer (short + vertically centered) */
+.site-footer{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  padding:0.9rem 0;
+  text-align:center;
+  color:#6b7280;
+  font-size:0.85rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
+
+.site-footer p{ margin:0; }
 
 /* Mobile */
 @media (max-width:768px){
