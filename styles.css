@@ -211,16 +211,19 @@ p{ margin-bottom:1rem; }
 
 /* Footer (shorter, matches header feel) */
 .site-footer{
-  background:var(--surface);
-  border-top:1px solid var(--border);
-  padding:0.45rem 0;            /* shorter footer */
-  text-align:center;
-  color:#6b7280;
-  font-size:0.85rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 0.9rem 0;              /* taller so text is vertically centered */
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.site-footer .container{
-  padding: 0 1.75rem;
+.site-footer p{
+  margin: 0;                      /* prevents text from sitting too high */
 }
 
 /* Mobile */
