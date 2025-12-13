@@ -1,15 +1,6 @@
-/* =========================
-   RESET
-========================= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* =========================
-   VARIABLES
-========================= */
 :root{
   --bg:#f4f6f8;
   --surface:#ffffff;
@@ -21,17 +12,11 @@
   --blueHover:#1e3a8a;
   --blueInk:#1d4ed8;
 
-  --shadow: 0 1px 2px rgba(0,0,0,0.04),
-            0 8px 18px rgba(0,0,0,0.08);
+  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 18px rgba(0,0,0,0.08);
 }
 
-/* =========================
-   BASE
-========================= */
-html, body {
-  min-height: 100%;
-}
-
+/* Base / Safari hardening */
+html, body { min-height: 100%; }
 body{
   font-family:"Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
   background:var(--bg);
@@ -41,58 +26,29 @@ body{
   overflow-x:hidden;
   -webkit-text-size-adjust:100%;
 }
+main{ display:block; overflow:visible; }
 
-main{
-  display:block;
-  overflow:visible;
-}
+/* Typography */
+h1,h2,h3{ font-weight:900; letter-spacing:0.005em; }
+h1{ font-size:clamp(2.3rem, 4vw, 3.1rem); }
+h2{ font-size:1.55rem; }
+h3{ font-size:1.22rem; }
+p{ margin-bottom:1rem; }
 
-/* =========================
-   TYPOGRAPHY
-========================= */
-h1, h2, h3{
-  font-weight:900;
-  letter-spacing:0.005em;
-}
-
-h1{
-  font-size:clamp(2.3rem, 4vw, 3.1rem);
-}
-
-h2{
-  font-size:1.55rem;
-}
-
-h3{
-  font-size:1.22rem;
-}
-
-p{
-  margin-bottom:1rem;
-}
-
-/* =========================
-   LAYOUT
-========================= */
+/* Layout */
 .container{
   max-width:1100px;
   margin:0 auto;
   padding:0 1.75rem;
 }
-
-.section{
-  padding:2.6rem 0;
-}
-
+.section{ padding:2.6rem 0; }
 .section-intro{
   color:var(--muted);
   max-width:1000px;
   margin-bottom:1.2rem;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* Header */
 .site-header{
   position:sticky;
   top:0;
@@ -100,35 +56,24 @@ p{
   background:var(--surface);
   border-bottom:1px solid var(--border);
   box-shadow:var(--shadow);
+  -webkit-transform:translateZ(0);
 }
-
 .header-inner{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:0.45rem 1.75rem;
 }
-
 .logo{
   font-weight:900;
   letter-spacing:0.09em;
   font-size:1.1rem;
   text-transform:uppercase;
 }
+.logo a{ color:var(--text); text-decoration:none; }
+.logo a:hover{ color:var(--blueInk); }
 
-.logo a{
-  color:var(--text);
-  text-decoration:none;
-}
-
-.logo a:hover{
-  color:var(--blueInk);
-}
-
-.nav{
-  display:flex;
-}
-
+.nav{ display:flex; }
 .nav a{
   margin-left:1.5rem;
   font-size:0.95rem;
@@ -136,33 +81,22 @@ p{
   color:var(--muted);
   text-decoration:none;
 }
+.nav a:hover{ color:var(--text); }
 
-.nav a:hover{
-  color:var(--text);
-}
-
-/* =========================
-   TOP SHELF
-========================= */
+/* Shelf */
 .top-shelf{
   height:10px;
   background:linear-gradient(#f7f8fb,#f0f2f6);
   border-bottom:1px solid var(--border);
 }
 
-/* =========================
-   HERO
-========================= */
+/* Hero */
 .hero{
   background: linear-gradient(90deg,#e7f1ff,#f1f5ff);
   border-bottom:1px solid var(--border);
   padding:4.2rem 0 2.4rem;
 }
-
-.hero-inner{
-  max-width:920px;
-}
-
+.hero-inner{ max-width:920px; }
 .hero p{
   margin-top:0.9rem;
   margin-bottom:1.2rem;
@@ -170,11 +104,8 @@ p{
   line-height:1.85;
 }
 
-/* =========================
-   BUTTONS
-========================= */
-.btn-primary,
-.btn-secondary{
+/* Buttons */
+.btn-primary,.btn-secondary{
   display:inline-block;
   width:auto;
   padding:0.68rem 1.5rem;
@@ -182,17 +113,12 @@ p{
   font-weight:800;
   text-decoration:none;
 }
-
 .btn-primary{
   background:var(--blue);
   color:#fff;
   border:1px solid var(--blue);
 }
-
-.btn-primary:hover{
-  background:var(--blueHover);
-  border-color:var(--blueHover);
-}
+.btn-primary:hover{ background:var(--blueHover); border-color:var(--blueHover); }
 
 .btn-secondary{
   background:transparent;
@@ -200,21 +126,14 @@ p{
   border:1px solid #c7d2fe;
   padding:0.58rem 1.35rem;
 }
+.btn-secondary:hover{ background:#eef2ff; border-color:#93c5fd; }
 
-.btn-secondary:hover{
-  background:#eef2ff;
-  border-color:#93c5fd;
-}
-
-/* =========================
-   CARDS
-========================= */
+/* Cards */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:2rem;
 }
-
 .card{
   background:var(--surface);
   border-radius:1rem;
@@ -224,18 +143,13 @@ p{
   display:flex;
   flex-direction:column;
 }
-
-.card h3{
-  margin-bottom:0.35rem;
-}
-
+.card h3{ margin-bottom:0.35rem; }
 .tagline{
   color:var(--muted);
   margin:0.75rem 0 1.15rem;
   min-height:3.4rem;
   font-size:0.95rem;
 }
-
 .pill-list{
   list-style:none;
   display:flex;
@@ -243,7 +157,6 @@ p{
   gap:0.45rem;
   margin-bottom:1.25rem;
 }
-
 .pill-list li{
   padding:0.25rem 0.7rem;
   border-radius:999px;
@@ -252,28 +165,18 @@ p{
   background:#f9fafb;
   color:#374151;
 }
+.card-actions{ margin-top:auto; }
 
-.card-actions{
-  margin-top:auto;
-}
-
-/* =========================
-   INDICATOR NAV
-========================= */
+/* Indicator nav + spacing under CTA */
 .indicator-nav{
   display:flex;
   gap:0.6rem;
   flex-wrap:wrap;
   margin-bottom:2rem;
 }
+.doc-actions{ margin:0.75rem 0 1.35rem; }
 
-.doc-actions{
-  margin:0.75rem 0 1.35rem;
-}
-
-/* =========================
-   SCREENSHOT CHART
-========================= */
+/* Screenshot chart */
 .chart-shot{
   display:block;
   border:1px solid var(--border);
@@ -281,70 +184,47 @@ p{
   overflow:hidden;
   background:#fff;
   box-shadow:0 10px 24px rgba(0,0,0,0.06);
-  margin:1.4rem 0 1.6rem;
+  margin:1.1rem 0 0.75rem;
 }
-
-.chart-shot img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
+.chart-shot img{ width:100%; height:auto; display:block; }
 .chart-shot-caption{
   color:var(--muted);
   font-size:0.92rem;
   margin-bottom:2rem;
 }
 
-/* =========================
-   DOCUMENT RHYTHM (CRITICAL)
-   Ensures all section headers align evenly
-========================= */
+/* Divider (Investopedia-ish) */
+.doc-divider{
+  border:0;
+  border-top:1px solid var(--border);
+  margin:24px 0;
+}
 
-/* Remove unpredictable top margins */
+/* Document rhythm for indicator pages */
 .section-doc h2,
 .section-doc p,
 .section-doc ul,
-.section-doc ol{
-  margin-top:0;
-}
+.section-doc ol{ margin-top:0; }
 
-/* Uniform spacing between paragraphs */
-.section-doc p{
-  margin-bottom:16px;
+.section-doc h2{
+  margin-top:34px;
+  margin-bottom:12px;
+  line-height:1.25;
 }
+.section-doc h2:first-of-type{ margin-top:18px; }
 
-/* Uniform spacing after lists */
+.section-doc p{ margin-bottom:16px; }
+
 .section-doc ul,
 .section-doc ol{
   margin-bottom:18px;
   padding-left:22px;
 }
 
-/* List item spacing */
-.section-doc li{
-  margin-bottom:8px;
-}
+.section-doc li{ margin-bottom:8px; }
+.section-doc li:last-child{ margin-bottom:0; }
 
-.section-doc li:last-child{
-  margin-bottom:0;
-}
-
-/* EVERY section header starts the same distance */
-.section-doc h2{
-  margin-top:34px;
-  margin-bottom:12px;
-  line-height:1.25;
-}
-
-/* First section shouldn't be pushed down */
-.section-doc h2:first-of-type{
-  margin-top:18px;
-}
-
-/* =========================
-   FOOTER
-========================= */
+/* Footer */
 .site-footer{
   border-top:1px solid var(--border);
   padding:0.9rem 0;
@@ -354,14 +234,9 @@ p{
   justify-content:center;
   align-items:center;
 }
+.site-footer p{ margin:0; }
 
-.site-footer p{
-  margin:0;
-}
-
-/* =========================
-   MOBILE
-========================= */
+/* Mobile */
 @media (max-width:768px){
   .nav{ display:none; }
   .container{ padding:0 1.25rem; }
