@@ -70,7 +70,11 @@ p{ margin-bottom:1rem; }
   font-size:1.1rem;
   text-transform:uppercase;
 }
-.logo a{ color:var(--text); text-decoration:none; }
+.logo a{
+  color:var(--text);
+  text-decoration:none;
+  transition:color .2s ease;
+}
 .logo a:hover{ color:var(--blueInk); }
 
 .nav{ display:flex; }
@@ -80,6 +84,7 @@ p{ margin-bottom:1rem; }
   font-weight:700;
   color:var(--muted);
   text-decoration:none;
+  transition:color .2s ease;
 }
 .nav a:hover{ color:var(--text); }
 
@@ -105,20 +110,25 @@ p{ margin-bottom:1rem; }
 }
 
 /* Buttons */
-.btn-primary,.btn-secondary{
+.btn-primary,
+.btn-secondary{
   display:inline-block;
-  width:auto;
   padding:0.68rem 1.5rem;
   border-radius:999px;
   font-weight:800;
   text-decoration:none;
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
 }
+
 .btn-primary{
   background:var(--blue);
   color:#fff;
   border:1px solid var(--blue);
 }
-.btn-primary:hover{ background:var(--blueHover); border-color:var(--blueHover); }
+.btn-primary:hover{
+  background:var(--blueHover);
+  border-color:var(--blueHover);
+}
 
 .btn-secondary{
   background:transparent;
@@ -126,7 +136,10 @@ p{ margin-bottom:1rem; }
   border:1px solid #c7d2fe;
   padding:0.58rem 1.35rem;
 }
-.btn-secondary:hover{ background:#eef2ff; border-color:#93c5fd; }
+.btn-secondary:hover{
+  background:#eef2ff;
+  border-color:#93c5fd;
+}
 
 /* Cards */
 .cards{
@@ -186,7 +199,11 @@ p{ margin-bottom:1rem; }
   box-shadow:0 10px 24px rgba(0,0,0,0.06);
   margin:1.1rem 0 0.75rem;
 }
-.chart-shot img{ width:100%; height:auto; display:block; }
+.chart-shot img{
+  width:100%;
+  height:auto;
+  display:block;
+}
 .chart-shot-caption{
   color:var(--muted);
   font-size:0.92rem;
