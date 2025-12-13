@@ -12,180 +12,117 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=2025-12-13c" />
+  <link rel="stylesheet" href="styles.css?v=2025-12-13-final" />
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="logo"><a href="index.html">Open Indicator Lab</a></div>
-      <nav class="nav">
-        <a href="#hero">Home</a>
-        <a href="#indicators">Indicators</a>
-        <a href="#about">About</a>
-      </nav>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo"><a href="index.html">Open Indicator Lab</a></div>
+    <nav class="nav">
+      <a href="#hero">Home</a>
+      <a href="#indicators">Indicators</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="top-shelf"></div>
+
+<section id="hero" class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <h1>Free Indicators. No Pitch.</h1>
+      <p>
+        A quiet corner of the internet for traders who don’t believe basic indicators should cost a fortune.
+        Every indicator here is free to use on TradingView and documented in plain English — what it does,
+        how it works, and when it actually helps — without paywalls, upsells, or mystique.
+      </p>
+      <a href="#indicators" class="btn-primary">Browse indicators</a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <div class="top-shelf" aria-hidden="true"></div>
+<main>
 
-  <!-- HERO -->
-  <section id="hero" class="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <h1>Free Indicators. No Pitch.</h1>
-        <p>
-          A quiet corner of the internet for traders who don’t believe basic indicators should cost a fortune.
-          Every indicator here is free to use on TradingView and documented in plain English — what it does, how it works,
-          and when it actually helps — without paywalls, upsells, or mystique.
+<section id="indicators" class="section">
+  <div class="container">
+    <h2>Indicators</h2>
+    <p class="section-intro">
+      Start with the tools below, then drill into each indicator’s dedicated page for setup, interpretation, and best practices.
+    </p>
+
+    <div class="cards">
+
+      <!-- Adaptive -->
+      <article class="card">
+        <h3>Adaptive Trend Ribbon (Larsson-Style)</h3>
+        <p class="tagline">
+          Dual MA trend ribbon with SMMA/EMA options and ATR neutral zones — a free Larsson-style ribbon.
         </p>
-        <a href="#indicators" class="btn-primary">Browse indicators</a>
-      </div>
-    </div>
-  </section>
-
-  <main>
-
-    <!-- INDICATORS -->
-    <section id="indicators" class="section">
-      <div class="container">
-        <h2>Indicators</h2>
-        <p class="section-intro">
-          Start with the tools below, then drill into each indicator’s dedicated page for setup, interpretation, and best practices.
-        </p>
-
-        <div class="cards">
-          <article class="card">
-            <h3>Adaptive Trend Ribbon (Larsson-Style)</h3>
-            <p class="tagline">
-              Dual MA trend ribbon with SMMA/EMA options and ATR neutral zones — a free Larsson-style ribbon for TradingView.
-            </p>
-            <ul class="pill-list">
-              <li>Trend</li>
-              <li>Overlay</li>
-              <li>SMMA / EMA</li>
-              <li>ATR filter</li>
-            </ul>
-            <div class="card-actions">
-              <a href="indicators/adaptive-dual-ma-trend-ribbon.html" class="btn-secondary">Learn more</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Blended Net Liquidity Correlation</h3>
-            <p class="tagline">
-              Customizable net-liquidity model built from FRED data, with multi-window correlation between liquidity and price.
-            </p>
-            <ul class="pill-list">
-              <li>Macro</li>
-              <li>Liquidity</li>
-              <li>FRED data</li>
-              <li>Correlation table</li>
-            </ul>
-            <div class="card-actions">
-              <a href="indicators/blended-net-liquidity-correlation.html" class="btn-secondary">Learn more</a>
-            </div>
-          </article>
+        <ul class="pill-list">
+          <li>Trend</li>
+          <li>Overlay</li>
+          <li>SMMA / EMA</li>
+          <li>ATR</li>
+        </ul>
+        <div class="card-actions">
+          <a href="indicators/adaptive-dual-ma-trend-ribbon.html" class="btn-secondary">Learn more</a>
         </div>
+      </article>
 
-        <!-- TradingView-style note -->
-        <p class="section-intro" style="margin-top:1.6rem; font-style:italic;">
-          More indicators will be added as they’re developed and published.
+      <!-- Hybrid -->
+      <article class="card">
+        <h3>Hybrid Confluence (RSI, MFI, StochRSI)</h3>
+        <p class="tagline">
+          Two-tier momentum framework combining RSI, MFI, and StochRSI for pressure vs extremes.
         </p>
-
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2>About Open Indicator Lab</h2>
-
-        <p>
-          Open Indicator Lab exists to document how commonly used trading indicators actually work.
-          Over time, many standard technical ideas — moving averages, momentum oscillators, volatility measures —
-          have been repackaged, branded, and marketed as proprietary systems. While tools are often explained at a surface level,
-          the underlying mechanics are rarely discussed in detail. This site focuses on what’s under the hood.
-        </p>
-
-        <h3 class="doc-subhead">What We Believe</h3>
-        <ul>
-          <li>Traders should understand the tools they use</li>
-          <li>Basic technical concepts shouldn’t require expensive subscriptions</li>
-          <li>Clarity is more useful than complexity</li>
-          <li>Education matters more than presentation</li>
+        <ul class="pill-list">
+          <li>Momentum</li>
+          <li>RSI</li>
+          <li>MFI</li>
+          <li>StochRSI</li>
         </ul>
+        <div class="card-actions">
+          <a href="indicators/hybrid-confluence-rsi-mfi-stochrsi.html" class="btn-secondary">Learn more</a>
+        </div>
+      </article>
 
-        <h3 class="doc-subhead">What This Site Does</h3>
-        <ul>
-          <li>Explains what an indicator actually measures</li>
-          <li>Describes how it’s constructed at a conceptual level</li>
-          <li>Shows when it tends to help</li>
-          <li>Highlights where it tends to fail</li>
-          <li>Explains how traders commonly recreate similar behavior manually</li>
+      <!-- Blended -->
+      <article class="card">
+        <h3>Blended Net Liquidity Correlation</h3>
+        <p class="tagline">
+          Public-data liquidity model with multi-window correlation vs price.
+        </p>
+        <ul class="pill-list">
+          <li>Macro</li>
+          <li>Liquidity</li>
+          <li>FRED</li>
+          <li>Correlation</li>
         </ul>
+        <div class="card-actions">
+          <a href="indicators/blended-net-liquidity-correlation.html" class="btn-secondary">Learn more</a>
+        </div>
+      </article>
 
-        <!-- divider restored here -->
-        <hr class="doc-divider" />
+    </div>
 
-        <h2 id="misconceptions">Common Misconceptions</h2>
+    <p class="section-intro" style="margin-top:1.6rem;font-style:italic;">
+      More indicators will be added as they’re developed and published.
+    </p>
 
-        <p><strong>“Proprietary” means unique or complex.</strong></p>
-        <p>
-          Often it just means a familiar technical idea packaged into a specific visual layout or preset.
-          Closed-source does not automatically mean fundamentally different.
-        </p>
+  </div>
+</section>
 
-        <p><strong>More complexity means more edge.</strong></p>
-        <p>
-          Extra inputs and conditions can make a tool harder to understand and harder to use consistently.
-          Simpler tools can be strong because they’re easier to reason about.
-        </p>
+</main>
 
-        <p><strong>Institutions use entirely different indicators.</strong></p>
-        <p>
-          Institutions may have different data and execution, but many concepts — trend, momentum, volatility —
-          are the same. Process and context matter more than “secret indicators.”
-        </p>
+<footer class="site-footer">
+  <p>© <span id="year"></span> Open Indicator Lab — TradingView indicators, minus the sales pitch.</p>
+</footer>
 
-        <p><strong>Paying for a tool guarantees better results.</strong></p>
-        <p>
-          Buying an indicator can feel like progress, but ownership doesn’t create understanding.
-          Without knowing what it measures and when it fails, price doesn’t help.
-        </p>
-
-        <p><strong>Indicators are meant to give signals.</strong></p>
-        <p>
-          Most tools are best used as context filters — trend bias, momentum conditions, volatility regime —
-          not as stand-alone buy/sell systems.
-        </p>
-
-        <p><strong>If it’s popular, it must be superior.</strong></p>
-        <p>
-          Popularity often reflects marketing reach and presentation.
-          Understanding how the indicator works matters more than how widely it’s promoted.
-        </p>
-
-        <!-- divider before philosophy block -->
-        <hr class="doc-divider" />
-
-        <p><strong>Open Indicator Lab is not a signal service, a paid course, or a promise of profitability.</strong></p>
-        <p>We don’t provide alerts, trade calls, or shortcuts.</p>
-        <p>The goal is to document how indicators work — not to tell anyone when to trade.</p>
-        <p><strong>If an indicator can’t be explained down to its underlying mechanics, it probably isn’t understood well enough to trade.</strong></p>
-
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Open Indicator Lab — TradingView indicators, minus the sales pitch.</p>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
