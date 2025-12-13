@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hybrid Confluence (RSI, MFI, StochRSI) Two-Tier Momentum Framework — Docs | Open Indicator Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css?v=2025-12-13c" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo"><a href="../index.html">Open Indicator Lab</a></div>
+      <nav class="nav">
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#indicators">Indicators</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="top-shelf" aria-hidden="true"></div>
+
+  <main class="section section-doc">
+    <div class="container">
+
+      <!-- With 3 indicators, circular nav now makes sense -->
+      <div class="indicator-nav">
+        <a href="blended-net-liquidity-correlation.html" class="btn-secondary">← Previous</a>
+        <a href="../index.html#indicators" class="btn-secondary">All indicators</a>
+        <a href="adaptive-dual-ma-trend-ribbon.html" class="btn-secondary">Next →</a>
+      </div>
+
+      <h1>Hybrid Confluence (RSI, MFI, StochRSI) Two-Tier Momentum Framework</h1>
+
+      <p>
+        Many traders explore multi-oscillator hybrid confluence approaches that combine momentum and volume signals—most commonly RSI,
+        Money Flow Index (MFI), and Stochastic RSI—to study stretched market conditions. These hybrid concepts are widely used to analyze
+        potential exhaustion zones, cycle extremes, and periods of sustained buying or selling pressure across different timeframes.
+      </p>
+
+      <p>
+        This script does not replicate, reverse-engineer, or replace any paid or closed-source indicator.
+        Instead, it provides a fully transparent framework built exclusively from standard, well-documented technical indicators.
+        All calculations are explicit and configurable, allowing traders to study hybrid momentum behavior without relying on proprietary logic
+        or black-box tools.
+      </p>
+
+      <div class="doc-actions">
+        <!-- Not published yet: placeholder button -->
+        <span class="btn-secondary" style="opacity:0.65; cursor:not-allowed;">Not published on TradingView yet</span>
+      </div>
+
+      <!-- Screenshot (click optional for now; you can later link it to TradingView script URL) -->
+      <a class="chart-shot" href="../index.html#indicators">
+        <img src="../assets/hybrid-confluence.png" alt="Hybrid Confluence (RSI, MFI, StochRSI) example chart">
+      </a>
+      <p class="chart-shot-caption">Screenshot preview. Once published, this will link to the TradingView script page.</p>
+
+      <h2>What the Script Does</h2>
+
+      <h3>1. Builds a hybrid momentum confluence model</h3>
+      <p>
+        The script combines three widely used oscillators:
+      </p>
+      <ul>
+        <li><strong>RSI (Relative Strength Index)</strong> — price momentum</li>
+        <li><strong>MFI (Money Flow Index)</strong> — volume-weighted momentum</li>
+        <li><strong>Stochastic RSI</strong> — momentum relative to its own recent range</li>
+      </ul>
+      <p>
+        Each component operates on a normalized 0–100 scale, allowing meaningful comparison and aggregation.
+      </p>
+
+      <h3>2. Implements a clear two-tier signal structure</h3>
+      <p>
+        Instead of producing a single binary buy/sell output, the script separates early pressure from extreme conditions:
+      </p>
+
+      <p><strong>2-of-3 Confluence (Setups)</strong></p>
+      <ul>
+        <li>When any two of the three oscillators reach oversold or overbought levels</li>
+        <li>Displayed as semi-transparent circles</li>
+        <li>Indicates building pressure or a developing condition</li>
+        <li>Designed as a heads-up, not a trade signal</li>
+      </ul>
+
+      <p><strong>3-of-3 Confluence (Signals)</strong></p>
+      <ul>
+        <li>When all three oscillators reach oversold or overbought levels</li>
+        <li>Displayed as prominent vertical bars spanning the oscillator range</li>
+        <li>Represents extreme momentum alignment</li>
+        <li>Intended to highlight potential exhaustion zones</li>
+      </ul>
+
+      <h3>3. Visualizes sustained pressure using consecutive signal intensity</h3>
+      <p>
+        When 3-of-3 conditions persist across multiple bars:
+      </p>
+      <ul>
+        <li>Each consecutive bar becomes progressively darker (up to six discrete intensity levels)</li>
+        <li>Darkness reflects duration and persistence, not prediction</li>
+      </ul>
+      <p>
+        This helps visualize scenarios where markets continue pushing higher or lower before a major turning point,
+        rather than assuming a single signal marks the exact top or bottom.
+      </p>
+
+      <h3>4. Works across markets and timeframes</h3>
+      <ul>
+        <li>Works on crypto, equities, futures, and FX</li>
+        <li>Scales naturally from intraday to higher timeframes</li>
+        <li>Can be used on Daily and multi-day charts for macro context</li>
+      </ul>
+
+      <h2>Why This Script Is Useful</h2>
+      <p>
+        Traditional oscillators often produce isolated signals that lack context. This framework adds clarity by:
+      </p>
+      <ol>
+        <li>Requiring multi-indicator agreement instead of single-signal triggers</li>
+        <li>Separating early pressure from extreme conditions</li>
+        <li>Showing how momentum can persist before a reversal</li>
+        <li>Avoiding binary “buy now / sell now” outputs</li>
+        <li>Remaining transparent and configurable</li>
+      </ol>
+
+      <p>
+        This makes the tool especially useful for swing traders, macro and cycle-focused traders, crypto traders studying extended momentum phases,
+        and analysts who prefer contextual signals over rigid rules.
+      </p>
+
+      <h2>How to Use</h2>
+      <ol>
+        <li>Adjust RSI, MFI, and StochRSI lengths to suit your timeframe</li>
+        <li>Observe 2-of-3 circles as early warnings of building pressure</li>
+        <li>Watch 3-of-3 bars for extreme momentum alignment</li>
+        <li>Note increasing bar intensity as pressure persists</li>
+        <li>Combine with structure, trend, volume, or price action for decisions</li>
+      </ol>
+
+      <p>
+        This script is best used as a contextual tool, not a standalone trading system.
+      </p>
+
+      <h2>What This Script Is Not</h2>
+      <ul>
+        <li>Not a recreation of any paid or proprietary indicator</li>
+        <li>Not affiliated with any trading educator or platform</li>
+        <li>Not intended as a predictive or standalone trading system</li>
+        <li>Does not claim to identify exact tops or bottoms</li>
+      </ul>
+      <p>
+        All signals are derived solely from openly documented RSI, MFI, and Stochastic RSI calculations.
+      </p>
+
+      <h2>Important Notes</h2>
+      <ul>
+        <li>This script is original, with a transparent methodology</li>
+        <li>All calculations use standard, well-known technical formulas</li>
+        <li>No hidden logic or undisclosed weighting is used</li>
+        <li>Signal visuals are descriptive, not predictive</li>
+      </ul>
+
+      <hr class="doc-divider" />
+
+      <p><strong>Not signals. Not alerts. Not shortcuts.</strong></p>
+      <p>The goal is to document how indicators work — not to tell anyone when to trade.</p>
+      <p><strong>If an indicator can’t be explained down to its underlying mechanics, it probably isn’t understood well enough to trade.</strong></p>
+
+      <h2>Disclaimer</h2>
+      <p>
+        This tool is provided for educational and analytical purposes only. It does not constitute financial advice or a recommendation to trade.
+        Always validate settings, test on multiple assets and timeframes, and use proper risk management before trading live.
+      </p>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Open Indicator Lab | Hybrid Confluence (RSI, MFI, StochRSI) — Docs</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
