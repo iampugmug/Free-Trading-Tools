@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Open Indicator Lab – Free Indicators</title>
+  <title>Open Indicator Lab – TradingView indicators, minus the sales pitch</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Free TradingView indicators with plain-English documentation. Learn how indicators actually work, without paywalls, hype, or sales pitches." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=cm1" />
+  <!-- unified cache-busted stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=2025-12-13a" />
 </head>
 <body>
 
@@ -26,6 +30,7 @@
 
   <div class="top-shelf" aria-hidden="true"></div>
 
+  <!-- HERO -->
   <section id="hero" class="hero">
     <div class="container">
       <div class="hero-inner">
@@ -41,6 +46,8 @@
   </section>
 
   <main>
+
+    <!-- INDICATORS -->
     <section id="indicators" class="section">
       <div class="container">
         <h2>Indicators</h2>
@@ -106,11 +113,11 @@
 
         <p><strong>What This Site Does</strong></p>
         <ul>
-          <li>What the indicator actually measures</li>
-          <li>How it’s constructed at a conceptual level</li>
-          <li>When it tends to help</li>
-          <li>When it tends to fail</li>
-          <li>How traders commonly recreate similar behavior manually</li>
+          <li>Explains what an indicator actually measures</li>
+          <li>Describes how it’s constructed at a conceptual level</li>
+          <li>Shows when it tends to help</li>
+          <li>Highlights where it tends to fail</li>
+          <li>Explains how traders commonly recreate similar behavior manually</li>
         </ul>
 
         <hr class="doc-divider" />
@@ -122,7 +129,7 @@
       </div>
     </section>
 
-    <!-- COMMON MISCONCEPTIONS ( Option A ) -->
+    <!-- COMMON MISCONCEPTIONS -->
     <section id="misconceptions" class="section">
       <div class="container">
         <h2>Common Misconceptions</h2>
@@ -141,8 +148,8 @@
 
         <p><strong>Institutions use entirely different indicators.</strong></p>
         <p>
-          Institutions may have different data and execution, but many concepts — trend, momentum, volatility — are the same.
-          Process and context matter more than “secret indicators.”
+          Institutions may have different data and execution, but many concepts — trend, momentum, volatility —
+          are the same. Process and context matter more than “secret indicators.”
         </p>
 
         <p><strong>Paying for a tool guarantees better results.</strong></p>
@@ -164,6 +171,7 @@
         </p>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -171,7 +179,8 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
