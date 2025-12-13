@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../styles.css?v=FULLTEXT1" />
+  <!-- cache-busted stylesheet -->
+  <link rel="stylesheet" href="../styles.css?v=2025-12-13a" />
 </head>
 <body>
 
@@ -37,7 +38,7 @@
 
       <h1>Adaptive Dual MA Trend Ribbon Community “Larsson-Style” Presets</h1>
 
-      <!-- CONTEXT (lockedin version) -->
+      <!-- CONTEXT -->
       <p>
         Many traders encounter dual-moving-average “trend ribbon” indicators through popular tools such as the Larsson Line,
         often sold at price points that put them out of reach for many retail traders.
@@ -90,7 +91,7 @@
       <p>
         Because moving averages are lagging by nature, this tends to work best on <strong>daily and higher</strong> timeframes
         and during clear directional trends. It performs poorly in sideways markets, which is why many traders combine it with
-        structure/volatility filters and other confirmation tools.
+        structure, volatility filters, or other confirmation tools.
       </p>
 
       <h2>Overview</h2>
@@ -109,7 +110,7 @@
       <h2>What the Script Does</h2>
 
       <ul>
-        <li>Plots Fast and Slow moving averages using the method of your choice: <strong>SMMA (RMA), EMA, SMA, or WMA</strong>.</li>
+        <li>Plots Fast and Slow moving averages using SMMA (RMA), EMA, SMA, or WMA.</li>
         <li>Colors the ribbon to show directional bias:
           <ul>
             <li><strong>Bullish</strong> when Fast MA &gt; Slow MA</li>
@@ -117,7 +118,7 @@
             <li><strong>Neutral</strong> when the difference is small (optional ATR filter)</li>
           </ul>
         </li>
-        <li>Supports ATR-based neutral zone filtering to reduce noise during low momentum / chop.</li>
+        <li>Supports ATR-based neutral zone filtering to reduce noise during low momentum conditions.</li>
         <li>Supports optional bar coloring tied to trend state.</li>
         <li>Works on all markets and timeframes.</li>
         <li>Indicator is free to use on TradingView; script is protected.</li>
@@ -144,10 +145,10 @@
       <h2>Popular Community MA Combinations</h2>
 
       <ul>
-        <li><strong>SMMA 15/29</strong> → smoother structural trend flow</li>
-        <li><strong>EMA 30/60</strong> → more responsive momentum shifts</li>
-        <li><strong>EMA 10/21</strong> → intraday rhythm</li>
-        <li><strong>EMA 50/100</strong> → higher-timeframe structure</li>
+        <li><strong>SMMA 15 / 29</strong> → smoother structural trend flow</li>
+        <li><strong>EMA 30 / 60</strong> → more responsive momentum shifts</li>
+        <li><strong>EMA 10 / 21</strong> → intraday rhythm</li>
+        <li><strong>EMA 50 / 100</strong> → higher-timeframe structure</li>
       </ul>
 
       <p>
@@ -157,11 +158,11 @@
       <h2>How to Use</h2>
 
       <ol>
-        <li>Choose your preferred MA type</li>
-        <li>Adjust Fast/Slow lengths to match your timeframe</li>
-        <li>Enable ATR Neutral Zone to reduce false flips in chop</li>
-        <li>Optionally enable bar coloring</li>
-        <li>Combine with structure, volume, or price action for decision-making</li>
+        <li>Choose your preferred MA type.</li>
+        <li>Adjust Fast/Slow lengths to match your timeframe.</li>
+        <li>Enable ATR Neutral Zone to reduce false flips in choppy conditions.</li>
+        <li>Optionally enable bar coloring.</li>
+        <li>Combine with structure, volume, or price action for decision-making.</li>
       </ol>
 
       <h2>Important Notes</h2>
@@ -180,9 +181,7 @@
 
       <h2>Disclaimer</h2>
 
-      <p>
-        Educational use only. This is not financial advice.
-      </p>
+      <p>Educational use only. This is not financial advice.</p>
 
     </div>
   </main>
