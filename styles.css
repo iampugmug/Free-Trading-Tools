@@ -1,6 +1,15 @@
-/* Reset */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+/* =========================
+   VARIABLES
+========================= */
 :root{
   --bg:#f4f6f8;
   --surface:#ffffff;
@@ -12,11 +21,17 @@
   --blueHover:#1e3a8a;
   --blueInk:#1d4ed8;
 
-  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 18px rgba(0,0,0,0.08);
+  --shadow: 0 1px 2px rgba(0,0,0,0.04),
+            0 8px 18px rgba(0,0,0,0.08);
 }
 
-/* Base / Safari hardening */
-html, body { min-height: 100%; }
+/* =========================
+   BASE
+========================= */
+html, body {
+  min-height: 100%;
+}
+
 body{
   font-family:"Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
   background:var(--bg);
@@ -26,29 +41,58 @@ body{
   overflow-x:hidden;
   -webkit-text-size-adjust:100%;
 }
-main{ display:block; overflow:visible; }
 
-/* Typography */
-h1,h2,h3{ font-weight:900; letter-spacing:0.005em; }
-h1{ font-size:clamp(2.3rem, 4vw, 3.1rem); }
-h2{ font-size:1.55rem; }
-h3{ font-size:1.22rem; }
-p{ margin-bottom:1rem; }
+main{
+  display:block;
+  overflow:visible;
+}
 
-/* Layout */
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1, h2, h3{
+  font-weight:900;
+  letter-spacing:0.005em;
+}
+
+h1{
+  font-size:clamp(2.3rem, 4vw, 3.1rem);
+}
+
+h2{
+  font-size:1.55rem;
+}
+
+h3{
+  font-size:1.22rem;
+}
+
+p{
+  margin-bottom:1rem;
+}
+
+/* =========================
+   LAYOUT
+========================= */
 .container{
   max-width:1100px;
   margin:0 auto;
   padding:0 1.75rem;
 }
-.section{ padding:2.6rem 0; }
+
+.section{
+  padding:2.6rem 0;
+}
+
 .section-intro{
   color:var(--muted);
   max-width:1000px;
   margin-bottom:1.2rem;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 .site-header{
   position:sticky;
   top:0;
@@ -56,28 +100,36 @@ p{ margin-bottom:1rem; }
   background:var(--surface);
   border-bottom:1px solid var(--border);
   box-shadow:var(--shadow);
-  -webkit-transform:translateZ(0);
 }
+
 .header-inner{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:0.45rem 1.75rem;
 }
+
 .logo{
   font-weight:900;
   letter-spacing:0.09em;
   font-size:1.1rem;
   text-transform:uppercase;
 }
+
 .logo a{
   color:var(--text);
   text-decoration:none;
   transition:color .2s ease;
 }
-.logo a:hover{ color:var(--blueInk); }
 
-.nav{ display:flex; }
+.logo a:hover{
+  color:var(--blueInk);
+}
+
+.nav{
+  display:flex;
+}
+
 .nav a{
   margin-left:1.5rem;
   font-size:0.95rem;
@@ -86,22 +138,33 @@ p{ margin-bottom:1rem; }
   text-decoration:none;
   transition:color .2s ease;
 }
-.nav a:hover{ color:var(--text); }
 
-/* Shelf */
+.nav a:hover{
+  color:var(--text);
+}
+
+/* =========================
+   TOP SHELF
+========================= */
 .top-shelf{
   height:10px;
   background:linear-gradient(#f7f8fb,#f0f2f6);
   border-bottom:1px solid var(--border);
 }
 
-/* Hero */
+/* =========================
+   HERO
+========================= */
 .hero{
   background: linear-gradient(90deg,#e7f1ff,#f1f5ff);
   border-bottom:1px solid var(--border);
   padding:4.2rem 0 2.4rem;
 }
-.hero-inner{ max-width:920px; }
+
+.hero-inner{
+  max-width:920px;
+}
+
 .hero p{
   margin-top:0.9rem;
   margin-bottom:1.2rem;
@@ -109,7 +172,9 @@ p{ margin-bottom:1rem; }
   line-height:1.85;
 }
 
-/* Buttons */
+/* =========================
+   BUTTONS
+========================= */
 .btn-primary,
 .btn-secondary{
   display:inline-block;
@@ -125,6 +190,7 @@ p{ margin-bottom:1rem; }
   color:#fff;
   border:1px solid var(--blue);
 }
+
 .btn-primary:hover{
   background:var(--blueHover);
   border-color:var(--blueHover);
@@ -136,17 +202,21 @@ p{ margin-bottom:1rem; }
   border:1px solid #c7d2fe;
   padding:0.58rem 1.35rem;
 }
+
 .btn-secondary:hover{
   background:#eef2ff;
   border-color:#93c5fd;
 }
 
-/* Cards */
+/* =========================
+   CARDS
+========================= */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:2rem;
 }
+
 .card{
   background:var(--surface);
   border-radius:1rem;
@@ -156,13 +226,18 @@ p{ margin-bottom:1rem; }
   display:flex;
   flex-direction:column;
 }
-.card h3{ margin-bottom:0.35rem; }
+
+.card h3{
+  margin-bottom:0.35rem;
+}
+
 .tagline{
   color:var(--muted);
   margin:0.75rem 0 1.15rem;
   min-height:3.4rem;
   font-size:0.95rem;
 }
+
 .pill-list{
   list-style:none;
   display:flex;
@@ -170,6 +245,7 @@ p{ margin-bottom:1rem; }
   gap:0.45rem;
   margin-bottom:1.25rem;
 }
+
 .pill-list li{
   padding:0.25rem 0.7rem;
   border-radius:999px;
@@ -178,18 +254,28 @@ p{ margin-bottom:1rem; }
   background:#f9fafb;
   color:#374151;
 }
-.card-actions{ margin-top:auto; }
 
-/* Indicator nav + spacing under CTA */
+.card-actions{
+  margin-top:auto;
+}
+
+/* =========================
+   INDICATOR NAV + CTA SPACING
+========================= */
 .indicator-nav{
   display:flex;
   gap:0.6rem;
   flex-wrap:wrap;
   margin-bottom:2rem;
 }
-.doc-actions{ margin:0.75rem 0 1.35rem; }
 
-/* Screenshot chart */
+.doc-actions{
+  margin:0.75rem 0 1.35rem;
+}
+
+/* =========================
+   SCREENSHOT CHART
+========================= */
 .chart-shot{
   display:block;
   border:1px solid var(--border);
@@ -199,38 +285,82 @@ p{ margin-bottom:1rem; }
   box-shadow:0 10px 24px rgba(0,0,0,0.06);
   margin:1.1rem 0 0.75rem;
 }
+
 .chart-shot img{
   width:100%;
   height:auto;
   display:block;
 }
+
 .chart-shot-caption{
   color:var(--muted);
   font-size:0.92rem;
   margin-bottom:2rem;
 }
 
-/* Divider (Investopedia style) */
+/* =========================
+   DIVIDER
+========================= */
 .doc-divider{
   border:0;
   border-top:1px solid var(--border);
   margin:24px 0;
 }
 
-/* Document rhythm for indicator pages */
+/* =========================
+   SUBHEADS (HOMEPAGE SECTIONS)
+========================= */
+.doc-subhead{
+  font-weight:900;
+  font-size:1.05rem;
+  margin:26px 0 10px;
+}
+
+/* Fix: spacing when subhead follows a list */
+#about ul + .doc-subhead,
+#about ul + h3{
+  margin-top:32px;
+}
+
+/* Consistent list spacing on homepage writing sections */
+#about ul,
+#misconceptions ul{
+  margin:0 0 18px 22px;
+}
+
+#about li,
+#misconceptions li{
+  margin-bottom:8px;
+}
+
+#about li:last-child,
+#misconceptions li:last-child{
+  margin-bottom:0;
+}
+
+/* =========================
+   DOCUMENT RHYTHM (INDICATOR PAGES)
+========================= */
 .section-doc h2,
 .section-doc p,
 .section-doc ul,
-.section-doc ol{ margin-top:0; }
+.section-doc ol{
+  margin-top:0;
+}
 
 .section-doc h2{
   margin-top:34px;
   margin-bottom:12px;
   line-height:1.25;
 }
-.section-doc h2:first-of-type{ margin-top:18px; }
 
-.section-doc p{ margin-bottom:16px; }
+.section-doc h2:first-of-type{
+  margin-top:18px;
+}
+
+.section-doc p{
+  margin-bottom:16px;
+}
 
 .section-doc ul,
 .section-doc ol{
@@ -238,10 +368,17 @@ p{ margin-bottom:1rem; }
   padding-left:22px;
 }
 
-.section-doc li{ margin-bottom:8px; }
-.section-doc li:last-child{ margin-bottom:0; }
+.section-doc li{
+  margin-bottom:8px;
+}
 
-/* Footer */
+.section-doc li:last-child{
+  margin-bottom:0;
+}
+
+/* =========================
+   FOOTER
+========================= */
 .site-footer{
   border-top:1px solid var(--border);
   padding:0.9rem 0;
@@ -251,9 +388,14 @@ p{ margin-bottom:1rem; }
   justify-content:center;
   align-items:center;
 }
-.site-footer p{ margin:0; }
 
-/* Mobile */
+.site-footer p{
+  margin:0;
+}
+
+/* =========================
+   MOBILE
+========================= */
 @media (max-width:768px){
   .nav{ display:none; }
   .container{ padding:0 1.25rem; }
