@@ -193,7 +193,7 @@ p{ margin-bottom:1rem; }
   margin-bottom:2rem;
 }
 
-/* Divider (Investopedia-ish) */
+/* Divider (Investopedia style) */
 .doc-divider{
   border:0;
   border-top:1px solid var(--border);
