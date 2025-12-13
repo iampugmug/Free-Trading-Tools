@@ -84,6 +84,11 @@ p{
   padding:2.6rem 0;
 }
 
+/* 🔧 NEW: bring About section closer to previous content */
+#about.section{
+  padding-top:1.6rem;
+}
+
 .section-intro{
   color:var(--muted);
   max-width:1000px;
@@ -260,7 +265,7 @@ p{
 }
 
 /* =========================
-   INDICATOR NAV + CTA SPACING
+   INDICATOR NAV + CTA
 ========================= */
 .indicator-nav{
   display:flex;
@@ -274,7 +279,7 @@ p{
 }
 
 /* =========================
-   SCREENSHOT CHART
+   SCREENSHOT
 ========================= */
 .chart-shot{
   display:block;
@@ -308,7 +313,7 @@ p{
 }
 
 /* =========================
-   SUBHEADS (HOMEPAGE SECTIONS)
+   SUBHEADS (HOMEPAGE)
 ========================= */
 .doc-subhead{
   font-weight:900;
@@ -316,13 +321,13 @@ p{
   margin:26px 0 10px;
 }
 
-/* Fix: spacing when subhead follows a list */
+/* spacing when subhead follows list */
 #about ul + .doc-subhead,
 #about ul + h3{
   margin-top:32px;
 }
 
-/* Consistent list spacing on homepage writing sections */
+/* consistent list spacing */
 #about ul,
 #misconceptions ul{
   margin:0 0 18px 22px;
@@ -339,7 +344,7 @@ p{
 }
 
 /* =========================
-   DOCUMENT RHYTHM (INDICATOR PAGES)
+   DOCUMENT RHYTHM (INDICATORS)
 ========================= */
 .section-doc h2,
 .section-doc p,
