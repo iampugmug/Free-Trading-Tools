@@ -38,7 +38,7 @@
 
     <h1>Hybrid Confluence (RSI, MFI, StochRSI) Two-Tier Momentum Framework</h1>
 
-    <!-- CONTEXT (updated with Steve CCU reference, safely framed) -->
+    <!-- CONTEXT -->
     <p>
       Many traders explore multi-oscillator hybrid confluence approaches that combine momentum and volume signals—most commonly RSI,
       Money Flow Index (MFI), and Stochastic RSI—to study stretched market conditions. These hybrid concepts are widely used to analyze
@@ -63,6 +63,35 @@
       <img src="../assets/hybrid-confluence.png" alt="Hybrid Confluence example chart">
     </a>
     <p class="chart-shot-caption">Screenshot preview. Once published, this can link to the TradingView script page.</p>
+
+    <h2>How Traders Recreate This Without the Indicator</h2>
+
+    <p>
+      You can recreate the core concept manually in TradingView using only built-in indicators.
+      The idea is to watch for <strong>confluence</strong> across three oscillators that each measure momentum from a slightly different angle.
+    </p>
+
+    <ol>
+      <li>Add <strong>RSI</strong> to measure price momentum (commonly 14 length).</li>
+      <li>Add <strong>MFI</strong> to measure volume-weighted momentum (commonly 14 length).</li>
+      <li>Add <strong>Stochastic RSI</strong> to measure RSI relative to its own recent range (commonly 14 / 14 / 3 / 3 style settings).</li>
+      <li>Decide your oversold/overbought thresholds (common: 30/70 or 20/80 depending on aggressiveness).</li>
+      <li>Mark “pressure building” when <strong>2 of the 3</strong> indicators are simultaneously oversold or overbought.</li>
+      <li>Mark “extreme alignment” when <strong>all 3</strong> are simultaneously oversold or overbought.</li>
+      <li>Track persistence: if the extreme condition stays true for multiple candles, treat it as <strong>sustained pressure</strong> rather than a single turning-point call.</li>
+    </ol>
+
+    <p>
+      This indicator simply packages those steps into a clean two-tier visualization (2-of-3 vs 3-of-3), and adds persistence intensity so you can see how long extremes last.
+      It’s meant as a <strong>context tool</strong>, not a “buy/sell system.”
+    </p>
+
+    <h2>Overview</h2>
+
+    <p>
+      Hybrid oscillator tools are often presented as proprietary systems, but the underlying components are well-documented and widely available.
+      This script focuses on transparency and structure rather than black-box logic.
+    </p>
 
     <h2>What the Script Does</h2>
 
@@ -106,10 +135,6 @@
       <li>Each consecutive bar becomes progressively darker (up to six discrete intensity levels)</li>
       <li>Darkness reflects duration and persistence, not prediction</li>
     </ul>
-    <p>
-      This helps visualize scenarios where markets continue pushing higher or lower before a major turning point,
-      rather than assuming a single signal marks the exact top or bottom.
-    </p>
 
     <h3>4. Works across markets and timeframes</h3>
     <ul>
@@ -130,11 +155,6 @@
       <li>Remaining transparent and configurable</li>
     </ol>
 
-    <p>
-      This makes the tool especially useful for swing traders, macro and cycle-focused traders, crypto traders studying extended momentum phases,
-      and analysts who prefer contextual signals over rigid rules.
-    </p>
-
     <h2>How to Use</h2>
     <ol>
       <li>Adjust RSI, MFI, and StochRSI lengths to suit your timeframe</li>
@@ -144,10 +164,6 @@
       <li>Combine with structure, trend, volume, or price action for decisions</li>
     </ol>
 
-    <p>
-      This script is best used as a contextual tool, not a standalone trading system.
-    </p>
-
     <h2>What This Script Is Not</h2>
     <ul>
       <li>Not a recreation of any paid or proprietary indicator</li>
@@ -155,10 +171,6 @@
       <li>Not intended as a predictive or standalone trading system</li>
       <li>Does not claim to identify exact tops or bottoms</li>
     </ul>
-
-    <p>
-      All signals are derived solely from openly documented RSI, MFI, and Stochastic RSI calculations.
-    </p>
 
     <h2>Important Notes</h2>
     <ul>
