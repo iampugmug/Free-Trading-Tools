@@ -24,7 +24,7 @@
   </div>
 </header>
 
-<div class="top-shelf"></div>
+<div class="top-shelf" aria-hidden="true"></div>
 
 <main class="section section-doc">
   <div class="container">
@@ -39,8 +39,15 @@
     <h1>Blended Net Liquidity Correlation</h1>
 
     <p>
-      Many traders study macro liquidity to understand broader market conditions and potential influences on price.
-      This tool blends public liquidity components and evaluates correlation vs price across multiple windows.
+      Many traders use liquidity-based models to understand broad macro conditions and their potential influence on price.
+      While institutional-grade models often rely on proprietary inputs, the community frequently studies public FRED series—such as
+      WALCL, RRP, TGA, and BTFP—to construct transparent net-liquidity frameworks that approximate capital movement within the financial system.
+    </p>
+
+    <p>
+      This script does not replicate or reverse-engineer any commercial macro indicator. Instead, it provides a flexible, transparent structure
+      for exploring how different liquidity components interact — and how those liquidity dynamics correlate with market price across various time windows.
+      The indicator is free to use on TradingView; the script is protected.
     </p>
 
     <div class="doc-actions">
@@ -50,31 +57,108 @@
       </a>
     </div>
 
+    <!-- Screenshot -->
     <a class="chart-shot"
        href="https://www.tradingview.com/script/3u6UCRSH-Blended-Net-Liquidity-Correlation/"
        target="_blank" rel="noopener">
-      <img src="../assets/blended-net-liquidity.png" alt="Blended Net Liquidity example chart">
+      <img src="../assets/blended-net-liquidity.png" alt="Blended Net Liquidity Correlation example chart">
     </a>
     <p class="chart-shot-caption">Click the chart to open the indicator on TradingView.</p>
 
     <h2>How Traders Recreate This Without the Indicator</h2>
+
     <p>
-      You can approximate similar liquidity views manually using public series and TradingView symbol math (e.g., WALCL − RRP − TGA),
-      then smooth and compare against price.
+      You can approximate similar liquidity views manually in TradingView using public series and symbol math.
+      The platform lets you add/subtract series directly, then smooth and compare against price.
+    </p>
+
+    <ol>
+      <li>Combine public series using symbol math (example style: <strong>WALCL − RRP − TGA</strong>).</li>
+      <li>Apply smoothing (like an SMA) to reduce noise.</li>
+      <li>Compare the result against price and test different offsets/timeframes.</li>
+      <li>Build multiple variants (with or without balance sheet data) and compare behavior.</li>
+    </ol>
+
+    <p>
+      This indicator packages those steps into a cleaner workflow with component toggles, blending controls, smoothing options,
+      and multi-window correlation analysis.
     </p>
 
     <h2>What the Script Does</h2>
+
+    <h3>1. Builds a customizable blended net-liquidity model</h3>
     <ul>
-      <li>Combines selectable components such as WALCL, RRP, TGA, BTFP, lending, and M2.</li>
-      <li>Supports toggles, smoothing, and weighting controls.</li>
-      <li>Computes correlations across multiple time windows and highlights the strongest.</li>
+      <li>Includes components such as <strong>WALCL</strong>, <strong>RRP</strong>, <strong>TGA</strong>, <strong>BTFP</strong>, <strong>ΔTOTLL</strong>, and <strong>ΔM2</strong> (depending on script settings).</li>
+      <li>Allows toggling each component on/off.</li>
+      <li>Provides adjustable blending/weighting for balance-sheet vs short-term flow models.</li>
+      <li>Supports optional SMA smoothing to reduce noise.</li>
+      <li>Supports offsetting liquidity to study potential lead/lag relationships.</li>
     </ul>
+
+    <h3>2. Runs multi-period price correlations</h3>
+    <ul>
+      <li>Computes correlation between liquidity and price across multiple windows.</li>
+      <li>Includes short-term and long-term horizons (e.g., months to years).</li>
+      <li>Displays results in a compact table.</li>
+      <li>Automatically highlights the strongest correlation window.</li>
+    </ul>
+
+    <h3>3. Plots liquidity alongside price</h3>
+    <ul>
+      <li>Plots the blended liquidity series directly on the chart for visual comparison.</li>
+      <li>Designed to provide macro context, not signals.</li>
+      <li>Helps frame liquidity regimes relative to market structure.</li>
+    </ul>
+
+    <h3>4. Maintains transparency and reproducibility</h3>
+    <ul>
+      <li>All inputs are public data series; no proprietary feeds required.</li>
+      <li>No hidden weighting or undisclosed logic.</li>
+      <li>Designed for research and hypothesis testing rather than prediction.</li>
+    </ul>
+
+    <h2>Why This Script Is Useful</h2>
+
+    <p>
+      Traditional liquidity charts often plot only one variable at a time. This framework adds clarity by combining components into a unified model and allowing you to test which inputs matter most.
+    </p>
+
+    <ol>
+      <li>Combines multiple macro liquidity components into a single blended series.</li>
+      <li>Gives full control over which components are included.</li>
+      <li>Provides smoothing and offset tools for cleaner research.</li>
+      <li>Offers multi-window correlation to quantify relationships instead of relying on narrative.</li>
+      <li>Helps study whether liquidity tends to lead, lag, or coincide with price on your chosen asset.</li>
+    </ol>
+
+    <p>
+      This tool is most useful for macro-focused traders, swing traders, crypto/macro analysts, and anyone studying how systemic liquidity interacts with price.
+    </p>
+
+    <h2>What This Script Is Not</h2>
+    <ul>
+      <li>Not a recreation of any commercial macro model.</li>
+      <li>Not a predictive tool or a “signal service.”</li>
+      <li>Not financial advice.</li>
+      <li>Correlation is descriptive — it does not guarantee future performance.</li>
+    </ul>
+
+    <h2>How to Use</h2>
+    <ol>
+      <li>Select which liquidity components to include.</li>
+      <li>Adjust any blending/weighting settings to emphasize balance-sheet vs flow dynamics.</li>
+      <li>Apply smoothing if you want cleaner trend structure.</li>
+      <li>Optionally offset liquidity to test lead/lag hypotheses.</li>
+      <li>Use correlation windows to see where relationships have historically been strongest.</li>
+      <li>Combine with structure, trend, and volume for macro context — not signals.</li>
+    </ol>
 
     <h2>Important Notes</h2>
     <ul>
-      <li>FRED data updates weekly and may revise history.</li>
-      <li>Correlation does not imply causation.</li>
-      <li>Liquidity models are approximations, not forecasts.</li>
+      <li>FRED data updates weekly and may revise historical values.</li>
+      <li>Correlation does not imply causation — it measures relationship, not predictiveness.</li>
+      <li>Liquidity models are approximations, not definitive macro forecasts.</li>
+      <li>Always validate settings across multiple assets and timeframes.</li>
     </ul>
 
     <hr class="doc-divider" />
@@ -84,7 +168,10 @@
     <p><strong>If an indicator can’t be explained down to its underlying mechanics, it probably isn’t understood well enough to trade.</strong></p>
 
     <h2>Disclaimer</h2>
-    <p>Educational use only. This is not financial advice.</p>
+    <p>
+      This tool is provided for educational and analytical purposes only. It does not constitute financial advice or a recommendation to trade.
+      Always validate settings, test on multiple assets and timeframes, and use proper risk management before trading live.
+    </p>
 
   </div>
 </main>
